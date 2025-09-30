@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Reset UMT - Master Data{% endblock %}
+
+{% block breadcrumb %}
+<li aria-current="page">
+    <div class="flex items-center">
+        <i class="fas fa-chevron-right text-gray-400 text-xs mx-2"></i>
+        <a href="{{ url_for('master_data.index') }}" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Master Data</a>
+    </div>
+</li>
+<li aria-current="page">
+    <div class="flex items-center">
+        <i class="fas fa-chevron-right text-gray-400 text-xs mx-2"></i>
+        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Reset UMT</span>
+    </div>
+</li>
+{% endblock %}
+
+{% block current_page %}Reset UMT{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Reset UMT Updates</h1>
+    <p class="text-gray-600 dark:text-gray-400">Perform UMT update reset operations</p>
+</div>
+
+<div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6 mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Reset Options</h3>
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <input type="checkbox" id="reset_data" class="mt-1 h-4 w-4 text-blue-600 rounded">
+                    <label for="reset_data" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                        Reset all UMT data
+                    </label>
+                </div>
+                <div class="flex items-start">
+                    <input type="checkbox" id="reset_config" class="mt-1 h-4 w-4 text-blue-600 rounded">
+                    <label for="reset_config" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                        Reset UMT configurations
+                    </label>
+                </div>
+                <div class="flex items-start">
+                    <input type="checkbox" id="reset_logs" class="mt-1 h-4 w-4 text-blue-600 rounded">
+                    <label for="reset_logs" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                        Clear UMT logs
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Information</h3>
+            <div class="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 p-4 rounded-lg">
+                <p class="text-sm text-blue-800 dark:text-blue-200">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Resetting UMT updates will clear all temporary data and configurations. 
+                    This action cannot be undone. Please confirm before proceeding.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-6">
+        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg">
+            <i class="fas fa-sync-alt mr-1"></i> Perform Reset
+        </button>
+    </div>
+</div>
+
+<div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6">
+    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Reset History</h3>
+    <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead>
+                <tr>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Date</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">User</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Action</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Status</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                <!-- No data available yet -->
+                <tr>
+                    <td colspan="4" class="px-4 py-4 text-center text-sm text-gray-500 dark:text-gray-400">No reset history available</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PLN Application{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Initialize Tailwind with dark mode support
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#64748b',
+                        success: '#10b981',
+                        warning: '#f59e0b',
+                        error: '#ef4444',
+                        info: '#0ea5e9'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .dark\:bg-gray-800 { --tw-bg-opacity: 1; background-color: rgba(31, 41, 55, var(--tw-bg-opacity)); }
+            .dark\:bg-gray-900 { --tw-bg-opacity: 1; background-color: rgba(17, 24, 39, var(--tw-bg-opacity)); }
+            .dark\:text-white { --tw-text-opacity: 1; color: rgba(255, 255, 255, var(--tw-text-opacity)); }
+            .dark\:text-gray-300 { --tw-text-opacity: 1; color: rgba(209, 213, 219, var(--tw-text-opacity)); }
+            .dark\:border-gray-700 { --tw-border-opacity: 1; border-color: rgba(55, 65, 81, var(--tw-border-opacity)); }
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen">
+    <nav class="bg-white dark:bg-gray-800 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-bolt text-blue-500 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800 dark:text-white">PLN Application</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 mr-4">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    
+                    {% if current_user.is_authenticated %}
+                    <div class="ml-3 relative">
+                        <div class="flex items-center">
+                            <span class="mr-2 text-sm font-medium text-gray-700 dark:text-gray-300">{{ current_user.username }}</span>
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full">{{ current_user.role.replace('_', ' ').title() }}</span>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <div class="w-64 bg-white dark:bg-gray-800 shadow-md h-screen sticky top-0">
+            <div class="p-4">
+                <h2 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Navigation</h2>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="{{ url_for('dashboard.index') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    {% if current_user.role in ['admin', 'coordinator'] %}
+                    <li>
+                        <a href="{{ url_for('master_data.index') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
+                            <i class="fas fa-database mr-3"></i>
+                            Master Data
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="{{ url_for('reports.index') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports & Monitoring
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('talangan.index') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
+                            <i class="fas fa-money-bill-wave mr-3"></i>
+                            Talangan
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('information.index') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
+                            <i class="fas fa-info-circle mr-3"></i>
+                            Information
+                        </a>
+                    </li>
+                    {% if current_user.role in ['admin', 'coordinator'] %}
+                    <li>
+                        <a href="{{ url_for('anomaly.index') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
+                            <i class="fas fa-exclamation-triangle mr-3"></i>
+                            HO Anomaly Module
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="{{ url_for('auth.change_password') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
+                            <i class="fas fa-cog mr-3"></i>
+                            Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('auth.logout') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
+                            <i class="fas fa-sign-out-alt mr-3"></i>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="flex-1 p-6">
+            <nav class="flex mb-6" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="{{ url_for('dashboard.index') }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                            <i class="fas fa-home mr-2"></i>
+                            Home
+                        </a>
+                    </li>
+                    {% for breadcrumb in breadcrumbs %}
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 text-xs mx-2"></i>
+                            <a href="{{ breadcrumb.url }}" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">{{ breadcrumb.name }}</a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                    {% block breadcrumb %}
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 text-xs mx-2"></i>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">{% block current_page %}{% endblock %}</span>
+                        </div>
+                    </li>
+                    {% endblock %}
+                </ol>
+            </nav>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="mb-6">
+                    {% for category, message in messages %}
+                        <div class="p-4 mb-2 rounded-lg {{ 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200' if category == 'success' else 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200' if category == 'info' else 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-200' if category == 'warning' else 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-200' }}">
+                            <i class="fas {{ 'fa-check-circle' if category == 'success' else 'fa-info-circle' if category == 'info' else 'fa-exclamation-triangle' if category == 'warning' else 'fa-exclamation-circle' }} mr-2"></i>
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% endwith %}
+
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme preference or respect OS preference
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        darkModeToggle.addEventListener('click', function() {
+            htmlElement.classList.toggle('dark');
+            const isDarkMode = htmlElement.classList.contains('dark');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        });
+
+        // Outdated rows animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const outdatedRows = document.querySelectorAll('.outdated-row');
+            outdatedRows.forEach(function(row) {
+                row.classList.add('animate-pulse');
+                row.style.backgroundColor = '#fee2e2'; // light red
+                row.style.borderColor = '#ef4444'; // red border
+            });
+        });
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

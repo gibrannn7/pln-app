@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Rekap Tunggakan - Reports{% endblock %}
+
+{% block breadcrumb %}
+<li aria-current="page">
+    <div class="flex items-center">
+        <i class="fas fa-chevron-right text-gray-400 text-xs mx-2"></i>
+        <a href="{{ url_for('reports.index') }}" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Reports & Monitoring</a>
+    </div>
+</li>
+<li aria-current="page">
+    <div class="flex items-center">
+        <i class="fas fa-chevron-right text-gray-400 text-xs mx-2"></i>
+        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Rekap Tunggakan</span>
+    </div>
+</li>
+{% endblock %}
+
+{% block current_page %}Rekap Tunggakan{% endblock %}
+
+{% block content %}
+<div class="mb-6">
+    <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Rekap Tunggakan (Outstanding Payments)</h1>
+        <div class="space-x-2">
+            <a href="{{ url_for('reports.tunggakan_export', format='excel') }}" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg inline-flex items-center">
+                <i class="fas fa-file-excel mr-1"></i> Excel
+            </a>
+            <a href="{{ url_for('reports.tunggakan_export', format='pdf') }}" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg inline-flex items-center">
+                <i class="fas fa-file-pdf mr-1"></i> PDF
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white dark:bg-gray-800 rounded-2xl shadow overflow-hidden mb-6">
+    <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead>
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">ID Pelanggan</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Periode</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Jumlah</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Petugas</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Created At</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                {% for transaction in tunggakan_data %}
+                <tr class="outdated-row">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ transaction.idpel }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ transaction.periode.strftime('%Y-%m-%d') if transaction.periode else '' }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">Rp {{ "{:,.2f}".format(transaction.total) if transaction.total else '0.00' }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ transaction.officer.user.username if transaction.officer.user else 'N/A' }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ transaction.created_at.strftime('%Y-%m-%d %H:%M') if transaction.created_at else '' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% if not tunggakan_data %}
+<div class="text-center py-12">
+    <i class="fas fa-inbox text-5xl text-gray-400 mb-4"></i>
+    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-1">No data available</h3>
+    <p class="text-gray-500 dark:text-gray-400">There are no outstanding payments to display at this time.</p>
+</div>
+{% endif %}
+{% endblock %}
