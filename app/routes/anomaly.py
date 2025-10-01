@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_required
+from flask_babel import _
 from app.models import Anomaly, AnomalyMaster, User
 from app import db
 

@@ -1,6 +1,7 @@
 import random
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user, login_required, current_user
+from flask_babel import _
 from app.models import User
 from app import db
 
@@ -33,7 +34,7 @@ def login():
         
         # Verify captcha
         if captcha_answer != session_captcha:
-            flash('Captcha verification failed. Please try again.', 'error')
+            flash(_('Captcha verification failed. Please try again.'), 'error')
             captcha_question, captcha_solution = generate_captcha()
             return render_template('auth/login.html', 
                                  captcha_question=captcha_question, 
@@ -55,7 +56,7 @@ def login():
             else:  # field_officer
                 return redirect(url_for('dashboard.index'))
         else:
-            flash('Invalid username or password', 'error')
+            flash(_('Invalid username or password'), 'error')
     
     # Generate new captcha
     captcha_question, captcha_solution = generate_captcha()
@@ -68,7 +69,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    flash('You have been logged out.', 'info')
+    flash(_('You have been logged out.'), 'info')
     return redirect(url_for('auth.login'))
 
 @auth_bp.route('/change-password', methods=['GET', 'POST'])
@@ -81,19 +82,19 @@ def change_password():
         
         # Verify current password
         if not current_user.check_password(current_password):
-            flash('Current password is incorrect', 'error')
+            flash(_('Current password is incorrect'), 'error')
             return render_template('auth/change_password.html')
         
         # Check if new passwords match
         if new_password != confirm_password:
-            flash('New passwords do not match', 'error')
+            flash(_('New passwords do not match'), 'error')
             return render_template('auth/change_password.html')
         
         # Update password
         current_user.set_password(new_password)
         db.session.commit()
         
-        flash('Password updated successfully', 'success')
+        flash(_('Password updated successfully'), 'success')
         return redirect(url_for('main.index'))
     
     return render_template('auth/change_password.html')

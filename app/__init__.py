@@ -1,12 +1,28 @@
 import os
-from flask import Flask
+from flask import Flask, session, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_babel import Babel
 import pymysql
 
 # Initialize extensions
 db = SQLAlchemy()
 login_manager = LoginManager()
+
+# Define supported languages
+LANGUAGES = ['en', 'id']
+
+# Setup Babel with a lazy loader for the locale
+babel = Babel()
+
+def get_locale():
+    """Get user's locale from session, defaulting to 'en'."""
+    # 1. Try to get language from session
+    lang = session.get('language')
+    if lang in LANGUAGES:
+        return lang
+    # 2. Otherwise try to guess the language from the user accept header
+    return request.accept_languages.best_match(LANGUAGES)
 
 def create_app():
     app = Flask(__name__)
@@ -15,13 +31,22 @@ def create_app():
     app.config['SECRET_KEY'] = 'psTBpygXXMQqYFtFusLXPFkntPgwACkqlEFjYSQJqQnHXPwApnVmakFNPdPGhCZQ'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/pln_db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['UPLOAD_FOLDER'] = 'app/static/uploads'
+    
+    # Use absolute path for robustness
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    app.config['UPLOAD_FOLDER'] = os.path.join(basedir, 'static/uploads')
+    app.config['BABEL_TRANSLATION_DIRECTORIES'] = os.path.join(basedir, 'translations')
+    
+    app.config['BABEL_DEFAULT_LOCALE'] = 'en'
     
     # Initialize extensions with app
     db.init_app(app)
     login_manager.init_app(app)
     login_manager.login_view = 'auth.login'
     login_manager.login_message = 'Please log in to access this page.'
+    
+    # Pass the locale selector function during initialization
+    babel.init_app(app, locale_selector=get_locale)
 
     # Import User model
     from app.models import User

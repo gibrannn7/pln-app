@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Dashboard - PLN Application{% endblock %}
+{% block title %}{{ _('Dashboard') }} - {{ _('PLN Application') }}{% endblock %}
 
-{% block current_page %}Dashboard{% endblock %}
+{% block current_page %}{{ _('Dashboard') }}{% endblock %}
 
 {% block content %}
 <div class="mb-8">
-    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Dashboard</h1>
-    <p class="text-gray-600 dark:text-gray-400">Welcome to your PLN Application dashboard</p>
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">{{ _('Dashboard') }}</h1>
+    <p class="text-gray-600 dark:text-gray-400">{{ _('Welcome to your PLN Application dashboard') }}</p>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -17,7 +17,7 @@
                 <i class="fas fa-exchange-alt text-xl"></i>
             </div>
             <div class="ml-4">
-                <p class="text-sm opacity-80">Total Transactions</p>
+                <p class="text-sm opacity-80">{{ _('Total Transactions') }}</p>
                 <p class="text-2xl font-bold">{{ total_transactions }}</p>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 <i class="fas fa-check-circle text-xl"></i>
             </div>
             <div class="ml-4">
-                <p class="text-sm opacity-80">Completed</p>
+                <p class="text-sm opacity-80">{{ _('Completed') }}</p>
                 <p class="text-2xl font-bold">{{ completed_transactions }}</p>
             </div>
         </div>
@@ -41,7 +41,7 @@
                 <i class="fas fa-clock text-xl"></i>
             </div>
             <div class="ml-4">
-                <p class="text-sm opacity-80">Pending</p>
+                <p class="text-sm opacity-80">{{ _('Pending') }}</p>
                 <p class="text-2xl font-bold">{{ pending_transactions }}</p>
             </div>
         </div>
@@ -50,14 +50,14 @@
 
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
     <div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6">
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Monthly Transaction Summary (Last 6 Months)</h3>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">{{ _('Monthly Transaction Summary (Last 6 Months)') }}</h3>
         <div class="h-64">
             <canvas id="monthlyChart"></canvas>
         </div>
     </div>
     
     <div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6">
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Month-over-Month Trend</h3>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">{{ _('Month-over-Month Trend') }}</h3>
         <div class="h-64">
             <canvas id="momoChart"></canvas>
         </div>
@@ -66,9 +66,9 @@
 
 <div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6">
     <div class="flex justify-between items-center mb-4">
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Recent Transactions</h3>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Recent Transactions') }}</h3>
         <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm">
-            <i class="fas fa-sync-alt mr-1"></i>Refresh
+            <i class="fas fa-sync-alt mr-1"></i>{{ _('Refresh') }}
         </button>
     </div>
     
@@ -76,11 +76,11 @@
         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
             <thead>
                 <tr>
-                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">ID Pelanggan</th>
-                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Periode</th>
-                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Jumlah</th>
-                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Status</th>
-                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Petugas</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">{{ _('ID Pelanggan') }}</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">{{ _('Periode') }}</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">{{ _('Jumlah') }}</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">{{ _('Status') }}</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">{{ _('Petugas') }}</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -95,7 +95,7 @@
                             {% elif transaction.status == 'pending' %}bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200
                             {% else %}bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200
                             {% endif %}">
-                            {{ transaction.status.title() }}
+                            {{ _(transaction.status.title()) }}
                         </span>
                     </td>
                     <td class="px-4 py-3 text-sm text-gray-800 dark:text-gray-200">{{ transaction.officer.user.username if transaction.officer.user else 'N/A' }}</td>
@@ -118,7 +118,7 @@
         data: {
             labels: {{ months | tojson }},
             datasets: [{
-                label: 'Number of Transactions',
+                label: '{{ _("Number of Transactions") }}',
                 data: {{ counts | tojson }},
                 backgroundColor: 'rgba(59, 130, 246, 0.6)',
                 borderColor: 'rgba(59, 130, 246, 1)',
@@ -143,7 +143,7 @@
         data: {
             labels: {{ months | tojson }},
             datasets: [{
-                label: 'Total Amount (Rp)',
+                label: '{{ _("Total Amount (Rp)") }}',
                 data: {{ totals | tojson }},
                 borderColor: 'rgb(16, 185, 129)',
                 backgroundColor: 'rgba(16, 185, 129, 0.1)',

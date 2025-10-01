@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, send_file
 from flask_login import login_required
+from flask_babel import _
 from app.models import Transaction, User, Officer, Area, WALog, PrintLog, MonitoringLog, DailySettlement
 from app import db
 from datetime import datetime, timedelta

@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Reports & Monitoring - PLN Application{% endblock %}
+{% block title %}{{ _('Reports & Monitoring') }} - {{ _('PLN Application') }}{% endblock %}
 
-{% block current_page %}Reports & Monitoring{% endblock %}
+{% block current_page %}{{ _('Reports & Monitoring') }}{% endblock %}
 
 {% block content %}
 <div class="mb-8">
-    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Reports & Monitoring</h1>
-    <p class="text-gray-600 dark:text-gray-400">View and analyze system reports and monitoring data</p>
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">{{ _('Reports & Monitoring') }}</h1>
+    <p class="text-gray-600 dark:text-gray-400">{{ _('View and analyze system reports and monitoring data') }}</p>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -17,8 +17,8 @@
                 <i class="fas fa-chart-line text-blue-600 dark:text-blue-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Rekap per RBM</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Report by RBM code</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Rekap per RBM') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('Report by RBM code') }}</p>
             </div>
         </div>
     </a>
@@ -29,8 +29,8 @@
                 <i class="fas fa-chart-pie text-green-600 dark:text-green-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Rekap per Coordinator</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Report by coordinator</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Rekap per Coordinator') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('Report by coordinator') }}</p>
             </div>
         </div>
     </a>
@@ -41,8 +41,8 @@
                 <i class="fas fa-chart-bar text-yellow-600 dark:text-yellow-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Rekap per Officer</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Report by field officer</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Rekap per Officer') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('Report by field officer') }}</p>
             </div>
         </div>
     </a>
@@ -53,8 +53,8 @@
                 <i class="fas fa-map-marked-alt text-red-600 dark:text-red-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Rekap per Area</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Report by area</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Rekap per Area') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('Report by area') }}</p>
             </div>
         </div>
     </a>
@@ -65,8 +65,8 @@
                 <i class="fas fa-exclamation-triangle text-purple-600 dark:text-purple-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Rekap Tunggakan</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Outstanding payments report</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Rekap Tunggakan') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('Outstanding payments report') }}</p>
             </div>
         </div>
     </a>
@@ -77,8 +77,8 @@
                 <i class="fab fa-whatsapp text-indigo-600 dark:text-indigo-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">WA Sending Monitoring</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">WhatsApp communication logs</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('WA Sending Monitoring') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('WhatsApp communication logs') }}</p>
             </div>
         </div>
     </a>
@@ -89,8 +89,8 @@
                 <i class="fas fa-clipboard-list text-pink-600 dark:text-pink-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Log Monitoring</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">System monitoring logs</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Log Monitoring') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('System monitoring logs') }}</p>
             </div>
         </div>
     </a>
@@ -101,8 +101,8 @@
                 <i class="fas fa-cash-register text-teal-600 dark:text-teal-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Daily Settlement Monitoring</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Daily settlement reports</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Daily Settlement Monitoring') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('Daily settlement reports') }}</p>
             </div>
         </div>
     </a>
@@ -113,8 +113,8 @@
                 <i class="fas fa-print text-orange-600 dark:text-orange-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Bluetooth Print Monitoring</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Print log monitoring</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Bluetooth Print Monitoring') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('Print log monitoring') }}</p>
             </div>
         </div>
     </a>

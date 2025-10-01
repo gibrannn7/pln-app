@@ -36,113 +36,116 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen">
+    {% if current_user.is_authenticated %}
     <nav class="bg-white dark:bg-gray-800 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
                         <i class="fas fa-bolt text-blue-500 text-2xl mr-2"></i>
-                        <span class="text-xl font-bold text-gray-800 dark:text-white">PLN Application</span>
+                        <span class="text-xl font-bold text-gray-800 dark:text-white">{{ _('PLN Application') }}</span>
                     </div>
                 </div>
                 
                 <div class="flex items-center">
-                    <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 mr-4">
+                    <div class="mr-4">
+                        <a href="{{ url_for('main.set_language', lang_code='en') }}" class="inline-block px-3 py-1 rounded-full text-sm font-medium {% if session.get('language', 'en') == 'en' %}bg-blue-500 text-white{% else %}bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200{% endif %}">
+                            EN
+                        </a>
+                        <a href="{{ url_for('main.set_language', lang_code='id') }}" class="inline-block px-3 py-1 rounded-full text-sm font-medium {% if session.get('language', 'en') == 'id' %}bg-blue-500 text-white{% else %}bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200{% endif %}">
+                            ID
+                        </a>
+                    </div>
+                    <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200">
                         <i class="fas fa-moon dark:hidden"></i>
                         <i class="fas fa-sun hidden dark:block"></i>
                     </button>
                     
-                    {% if current_user.is_authenticated %}
                     <div class="ml-3 relative">
                         <div class="flex items-center">
                             <span class="mr-2 text-sm font-medium text-gray-700 dark:text-gray-300">{{ current_user.username }}</span>
                             <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full">{{ current_user.role.replace('_', ' ').title() }}</span>
                         </div>
                     </div>
-                    {% endif %}
                 </div>
             </div>
         </div>
     </nav>
+    {% endif %}
 
     <div class="flex">
+        {% if current_user.is_authenticated %}
         <div class="w-64 bg-white dark:bg-gray-800 shadow-md h-screen sticky top-0">
             <div class="p-4">
-                <h2 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Navigation</h2>
+                <h2 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">{{ _('Navigation') }}</h2>
                 <ul class="space-y-2">
                     <li>
                         <a href="{{ url_for('dashboard.index') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
                             <i class="fas fa-tachometer-alt mr-3"></i>
-                            Dashboard
+                            {{ _('Dashboard') }}
                         </a>
                     </li>
                     {% if current_user.role in ['admin', 'coordinator'] %}
                     <li>
                         <a href="{{ url_for('master_data.index') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
                             <i class="fas fa-database mr-3"></i>
-                            Master Data
+                            {{ _('Master Data') }}
                         </a>
                     </li>
                     {% endif %}
                     <li>
                         <a href="{{ url_for('reports.index') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
                             <i class="fas fa-chart-bar mr-3"></i>
-                            Reports & Monitoring
+                            {{ _('Reports & Monitoring') }}
                         </a>
                     </li>
                     <li>
                         <a href="{{ url_for('talangan.index') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
                             <i class="fas fa-money-bill-wave mr-3"></i>
-                            Talangan
+                            {{ _('Talangan') }}
                         </a>
                     </li>
                     <li>
                         <a href="{{ url_for('information.index') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
                             <i class="fas fa-info-circle mr-3"></i>
-                            Information
+                            {{ _('Information') }}
                         </a>
                     </li>
                     {% if current_user.role in ['admin', 'coordinator'] %}
                     <li>
                         <a href="{{ url_for('anomaly.index') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
                             <i class="fas fa-exclamation-triangle mr-3"></i>
-                            HO Anomaly Module
+                            {{ _('HO Anomaly Module') }}
                         </a>
                     </li>
                     {% endif %}
                     <li>
                         <a href="{{ url_for('auth.change_password') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
                             <i class="fas fa-cog mr-3"></i>
-                            Settings
+                            {{ _('Settings') }}
                         </a>
                     </li>
                     <li>
                         <a href="{{ url_for('auth.logout') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white">
                             <i class="fas fa-sign-out-alt mr-3"></i>
-                            Logout
+                            {{ _('Logout') }}
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
+        {% endif %}
 
         <div class="flex-1 p-6">
+            {% if current_user.is_authenticated %}
             <nav class="flex mb-6" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="{{ url_for('dashboard.index') }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
                             <i class="fas fa-home mr-2"></i>
-                            Home
+                            {{ _('Home') }}
                         </a>
                     </li>
-                    {% for breadcrumb in breadcrumbs %}
-                    <li>
-                        <div class="flex items-center">
-                            <i class="fas fa-chevron-right text-gray-400 text-xs mx-2"></i>
-                            <a href="{{ breadcrumb.url }}" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">{{ breadcrumb.name }}</a>
-                        </div>
-                    </li>
-                    {% endfor %}
                     {% block breadcrumb %}
                     <li aria-current="page">
                         <div class="flex items-center">
@@ -153,6 +156,7 @@
                     {% endblock %}
                 </ol>
             </nav>
+            {% endif %}
 
             {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -178,7 +182,6 @@
         const darkModeToggle = document.getElementById('darkModeToggle');
         const htmlElement = document.documentElement;
 
-        // Check for saved theme preference or respect OS preference
         const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
         const currentTheme = localStorage.getItem('theme');
 
@@ -188,21 +191,13 @@
             htmlElement.classList.remove('dark');
         }
 
-        darkModeToggle.addEventListener('click', function() {
-            htmlElement.classList.toggle('dark');
-            const isDarkMode = htmlElement.classList.contains('dark');
-            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-        });
-
-        // Outdated rows animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const outdatedRows = document.querySelectorAll('.outdated-row');
-            outdatedRows.forEach(function(row) {
-                row.classList.add('animate-pulse');
-                row.style.backgroundColor = '#fee2e2'; // light red
-                row.style.borderColor = '#ef4444'; // red border
+        if(darkModeToggle) {
+            darkModeToggle.addEventListener('click', function() {
+                htmlElement.classList.toggle('dark');
+                const isDarkMode = htmlElement.classList.contains('dark');
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
             });
-        });
+        }
     </script>
     {% block scripts %}{% endblock %}
 </body>

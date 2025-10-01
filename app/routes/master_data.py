@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_required
+from flask_babel import _
 from app.models import User, Area, Officer
 from app import db
 from app.utils import admin_required
@@ -32,7 +33,8 @@ def toggle_officer_active(officer_id):
     officer = Officer.query.get_or_404(officer_id)
     officer.active = not officer.active
     db.session.commit()
-    flash(f'Officer status updated to {"active" if officer.active else "inactive"}', 'success')
+    status = _('active') if officer.active else _('inactive')
+    flash(_('Officer status updated to %(status)s', status=status), 'success')
     return redirect(url_for('master_data.officers'))
 
 @master_data_bp.route('/officers/reset-imei/<int:officer_id>', methods=['POST'])
@@ -41,9 +43,10 @@ def toggle_officer_active(officer_id):
 def reset_officer_imei(officer_id):
     officer = Officer.query.get_or_404(officer_id)
     officer.imei = None
-    officer.user.imei = None
+    if officer.user:
+        officer.user.imei = None
     db.session.commit()
-    flash('Officer IMEI reset successfully', 'success')
+    flash(_('Officer IMEI reset successfully'), 'success')
     return redirect(url_for('master_data.officers'))
 
 @master_data_bp.route('/reset-umt')

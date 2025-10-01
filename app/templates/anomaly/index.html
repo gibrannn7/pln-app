@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}HO Anomaly Module - PLN Application{% endblock %}
+{% block title %}{{ _('HO Anomaly Module') }} - {{ _('PLN Application') }}{% endblock %}
 
-{% block current_page %}HO Anomaly Module{% endblock %}
+{% block current_page %}{{ _('HO Anomaly Module') }}{% endblock %}
 
 {% block content %}
 <div class="mb-8">
-    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">HO Anomaly Module</h1>
-    <p class="text-gray-600 dark:text-gray-400">Manage and monitor anomalies</p>
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">{{ _('HO Anomaly Module') }}</h1>
+    <p class="text-gray-600 dark:text-gray-400">{{ _('Manage and monitor anomalies') }}</p>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -17,8 +17,8 @@
                 <i class="fas fa-exclamation-triangle text-red-600 dark:text-red-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Daily Anomaly Reports</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">View daily anomaly reports</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Daily Anomaly Reports') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('View daily anomaly reports') }}</p>
             </div>
         </div>
     </a>
@@ -29,8 +29,8 @@
                 <i class="fas fa-user-tie text-yellow-600 dark:text-yellow-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Recap per Officer</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Anomalies by officer</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Recap per Officer') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('Anomalies by officer') }}</p>
             </div>
         </div>
     </a>
@@ -41,8 +41,8 @@
                 <i class="fas fa-calendar text-green-600 dark:text-green-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Recap per Date</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Anomalies by date</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Recap per Date') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('Anomalies by date') }}</p>
             </div>
         </div>
     </a>
@@ -53,8 +53,8 @@
                 <i class="fas fa-database text-blue-600 dark:text-blue-400 text-xl"></i>
             </div>
             <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Anomaly Master Data</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Manage anomaly types</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ _('Anomaly Master Data') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ _('Manage anomaly types') }}</p>
             </div>
         </div>
     </a>

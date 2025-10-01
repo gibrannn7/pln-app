@@ -1,0 +1,637 @@
+# Indonesian translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-10-01 21:03+0700\n"
+"PO-Revision-Date: 2025-10-01 21:10+0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: id\n"
+"Language-Team: id <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: app/routes/auth.py:37
+msgid "Captcha verification failed. Please try again."
+msgstr "Verifikasi captcha gagal. Silakan coba lagi."
+
+#: app/routes/auth.py:59
+msgid "Invalid username or password"
+msgstr "Nama pengguna atau kata sandi tidak valid."
+
+#: app/routes/auth.py:72
+msgid "You have been logged out."
+msgstr "Anda telah keluar."
+
+#: app/routes/auth.py:85
+msgid "Current password is incorrect"
+msgstr "Kata sandi saat ini salah."
+
+#: app/routes/auth.py:90
+msgid "New passwords do not match"
+msgstr "Kata sandi baru tidak cocok."
+
+#: app/routes/auth.py:97
+msgid "Password updated successfully"
+msgstr "Kata sandi berhasil diperbarui."
+
+#: app/routes/main.py:25
+msgid "Bahasa diubah menjadi Indonesia"
+msgstr "Bahasa diubah menjadi Indonesia."
+
+#: app/routes/main.py:27
+msgid "Language changed to English"
+msgstr "Bahasa diubah menjadi Inggris."
+
+#: app/routes/master_data.py:36
+msgid "active"
+msgstr "aktif"
+
+#: app/routes/master_data.py:36
+msgid "inactive"
+msgstr "tidak aktif"
+
+#: app/routes/master_data.py:37
+#, python-format
+msgid "Officer status updated to %(status)s"
+msgstr "Status petugas diperbarui menjadi %(status)s"
+
+#: app/routes/master_data.py:49
+msgid "Officer IMEI reset successfully"
+msgstr "IMEI petugas berhasil direset."
+
+#: app/templates/anomaly/index.html:3 app/templates/auth/login.html:10
+#: app/templates/base.html:46 app/templates/dashboard/index.html:3
+#: app/templates/information/index.html:3
+#: app/templates/master_data/index.html:3 app/templates/reports/index.html:3
+#: app/templates/talangan/index.html:3
+msgid "PLN Application"
+msgstr "Aplikasi PLN"
+
+#: app/templates/base.html:80
+msgid "Navigation"
+msgstr "Navigasi"
+
+#: app/templates/base.html:85 app/templates/dashboard/index.html:3
+#: app/templates/dashboard/index.html:5 app/templates/dashboard/index.html:9
+msgid "Dashboard"
+msgstr "Dasbor"
+
+#: app/templates/base.html:92 app/templates/master_data/coordinators.html:3
+#: app/templates/master_data/coordinators.html:9
+#: app/templates/master_data/index.html:3
+#: app/templates/master_data/index.html:5
+#: app/templates/master_data/index.html:9
+#: app/templates/master_data/officers.html:3
+#: app/templates/master_data/officers.html:9
+#: app/templates/master_data/reset_umt.html:3
+#: app/templates/master_data/reset_umt.html:9
+msgid "Master Data"
+msgstr "Data Induk"
+
+#: app/templates/base.html:99 app/templates/reports/index.html:3
+#: app/templates/reports/index.html:5 app/templates/reports/index.html:9
+msgid "Reports & Monitoring"
+msgstr "Laporan & Monitoring"
+
+#: app/templates/base.html:105 app/templates/talangan/index.html:3
+#: app/templates/talangan/index.html:5
+msgid "Talangan"
+msgstr "Talangan"
+
+#: app/templates/base.html:111 app/templates/information/customer_lookup.html:3
+#: app/templates/information/customer_lookup.html:9
+#: app/templates/information/index.html:3
+#: app/templates/information/index.html:5
+#: app/templates/information/index.html:9
+#: app/templates/master_data/reset_umt.html:55
+msgid "Information"
+msgstr "Informasi"
+
+#: app/templates/anomaly/index.html:3 app/templates/anomaly/index.html:5
+#: app/templates/anomaly/index.html:9 app/templates/base.html:118
+msgid "HO Anomaly Module"
+msgstr "Modul Anomali HO"
+
+#: app/templates/base.html:125
+msgid "Settings"
+msgstr "Pengaturan"
+
+#: app/templates/base.html:131
+msgid "Logout"
+msgstr "Keluar"
+
+#: app/templates/base.html:146
+msgid "Home"
+msgstr "Beranda"
+
+#: app/templates/anomaly/index.html:10
+msgid "Manage and monitor anomalies"
+msgstr "Kelola dan pantau anomali"
+
+#: app/templates/anomaly/index.html:20
+msgid "Daily Anomaly Reports"
+msgstr "Laporan Anomali Harian"
+
+#: app/templates/anomaly/index.html:21
+msgid "View daily anomaly reports"
+msgstr "Lihat laporan anomali harian"
+
+#: app/templates/anomaly/index.html:32
+msgid "Recap per Officer"
+msgstr "Rekap per Petugas"
+
+#: app/templates/anomaly/index.html:33
+msgid "Anomalies by officer"
+msgstr "Anomali berdasarkan petugas"
+
+#: app/templates/anomaly/index.html:44
+msgid "Recap per Date"
+msgstr "Rekap per Tanggal"
+
+#: app/templates/anomaly/index.html:45
+msgid "Anomalies by date"
+msgstr "Anomali berdasarkan tanggal"
+
+#: app/templates/anomaly/index.html:56
+msgid "Anomaly Master Data"
+msgstr "Data Induk Anomali"
+
+#: app/templates/anomaly/index.html:57
+msgid "Manage anomaly types"
+msgstr "Kelola jenis anomali"
+
+#: app/templates/auth/change_password.html:3
+msgid "Change Password - PLN Application"
+msgstr "Ubah Kata Sandi - Aplikasi PLN"
+
+#: app/templates/auth/change_password.html:5
+#: app/templates/auth/change_password.html:9
+#: app/templates/auth/change_password.html:31
+msgid "Change Password"
+msgstr "Ubah Kata Sandi"
+
+#: app/templates/auth/change_password.html:13
+msgid "Current Password"
+msgstr "Kata Sandi Saat Ini"
+
+#: app/templates/auth/change_password.html:19
+msgid "New Password"
+msgstr "Kata Sandi Baru"
+
+#: app/templates/auth/change_password.html:25
+msgid "Confirm New Password"
+msgstr "Konfirmasi Kata Sandi Baru"
+
+#: app/templates/auth/login.html:3
+msgid "Login - PLN Application"
+msgstr "Masuk - Aplikasi PLN"
+
+#: app/templates/auth/login.html:12
+msgid "Login to your account"
+msgstr "Masuk ke akun Anda"
+
+#: app/templates/auth/login.html:24
+#: app/templates/master_data/coordinators.html:37
+#: app/templates/master_data/officers.html:37
+msgid "Username"
+msgstr "Nama Pengguna"
+
+#: app/templates/auth/login.html:39
+msgid "Password"
+msgstr "Kata Sandi"
+
+#: app/templates/auth/login.html:54
+msgid "Captcha"
+msgstr "Captcha"
+
+#: app/templates/auth/login.html:67
+msgid "Enter the answer"
+msgstr "Masukkan jawaban"
+
+#: app/templates/auth/login.html:75
+msgid "Login"
+msgstr "Masuk"
+
+#: app/templates/dashboard/index.html:10
+msgid "Welcome to your PLN Application dashboard"
+msgstr "Selamat datang di dasbor Aplikasi PLN Anda"
+
+#: app/templates/dashboard/index.html:20
+msgid "Total Transactions"
+msgstr "Total Transaksi"
+
+#: app/templates/dashboard/index.html:32
+msgid "Completed"
+msgstr "Selesai"
+
+#: app/templates/dashboard/index.html:44
+msgid "Pending"
+msgstr "Tertunda"
+
+#: app/templates/dashboard/index.html:53
+msgid "Monthly Transaction Summary (Last 6 Months)"
+msgstr "Ringkasan Transaksi Bulanan (6 Bulan Terakhir)"
+
+#: app/templates/dashboard/index.html:60
+msgid "Month-over-Month Trend"
+msgstr "Tren Bulan ke Bulan"
+
+#: app/templates/dashboard/index.html:69
+msgid "Recent Transactions"
+msgstr "Transaksi Terkini"
+
+#: app/templates/dashboard/index.html:71
+msgid "Refresh"
+msgstr "Segarkan"
+
+#: app/templates/dashboard/index.html:79
+#: app/templates/information/customer_lookup.html:45
+msgid "ID Pelanggan"
+msgstr "ID Pelanggan"
+
+#: app/templates/dashboard/index.html:80
+#: app/templates/information/customer_lookup.html:59
+msgid "Periode"
+msgstr "Periode"
+
+#: app/templates/dashboard/index.html:81
+#: app/templates/information/customer_lookup.html:60
+msgid "Jumlah"
+msgstr "Jumlah"
+
+#: app/templates/dashboard/index.html:82
+#: app/templates/information/customer_lookup.html:62
+#: app/templates/master_data/coordinators.html:39
+#: app/templates/master_data/officers.html:40
+#: app/templates/master_data/reset_umt.html:81
+msgid "Status"
+msgstr "Status"
+
+#: app/templates/dashboard/index.html:83
+msgid "Petugas"
+msgstr "Petugas"
+
+#: app/templates/dashboard/index.html:121
+msgid "Number of Transactions"
+msgstr "Jumlah Transaksi"
+
+#: app/templates/dashboard/index.html:146
+msgid "Total Amount (Rp)"
+msgstr "Total Nominal (Rp)"
+
+#: app/templates/information/customer_lookup.html:3
+#: app/templates/information/customer_lookup.html:15
+#: app/templates/information/customer_lookup.html:20
+msgid "Customer Lookup"
+msgstr "Pencarian Pelanggan"
+
+#: app/templates/information/customer_lookup.html:24
+#: app/templates/information/index.html:20
+msgid "Customer Information Lookup"
+msgstr "Pencarian Informasi Pelanggan"
+
+#: app/templates/information/customer_lookup.html:25
+msgid "Search for customer details by ID Pelanggan"
+msgstr "Cari detail pelanggan berdasarkan ID Pelanggan"
+
+#: app/templates/information/customer_lookup.html:31
+msgid "Enter ID Pelanggan"
+msgstr "Masukkan ID Pelanggan"
+
+#: app/templates/information/customer_lookup.html:34
+msgid "Search"
+msgstr "Cari"
+
+#: app/templates/information/customer_lookup.html:42
+msgid "Customer Information"
+msgstr "Informasi Pelanggan"
+
+#: app/templates/information/customer_lookup.html:49
+msgid "Assigned Officer"
+msgstr "Petugas yang Ditugaskan"
+
+#: app/templates/information/customer_lookup.html:54
+msgid "Transaction History"
+msgstr "Riwayat Transaksi"
+
+#: app/templates/information/customer_lookup.html:61
+msgid "Tipe Pembayaran"
+msgstr "Tipe Pembayaran"
+
+#: app/templates/information/customer_lookup.html:63
+#: app/templates/master_data/coordinators.html:40
+msgid "Created At"
+msgstr "Dibuat Pada"
+
+#: app/templates/information/customer_lookup.html:94
+msgid "No transactions found"
+msgstr "Tidak ada transaksi ditemukan"
+
+#: app/templates/information/customer_lookup.html:95
+msgid "No transaction history available for this customer."
+msgstr "Tidak ada riwayat transaksi yang tersedia untuk pelanggan ini."
+
+#: app/templates/information/index.html:10
+msgid "Access customer and system information"
+msgstr "Akses informasi pelanggan dan sistem"
+
+#: app/templates/information/index.html:21
+msgid "Search for customer details"
+msgstr "Cari detail pelanggan"
+
+#: app/templates/master_data/coordinators.html:3
+#: app/templates/master_data/coordinators.html:15
+#: app/templates/master_data/coordinators.html:20
+#: app/templates/master_data/coordinators.html:25
+#: app/templates/master_data/index.html:20
+msgid "Coordinators"
+msgstr "Koordinator"
+
+#: app/templates/master_data/coordinators.html:27
+msgid "Add Coordinator"
+msgstr "Tambah Koordinator"
+
+#: app/templates/master_data/coordinators.html:38
+msgid "Area"
+msgstr "Area"
+
+#: app/templates/master_data/coordinators.html:41
+#: app/templates/master_data/officers.html:42
+msgid "Actions"
+msgstr "Aksi"
+
+#: app/templates/master_data/coordinators.html:56
+#: app/templates/master_data/officers.html:58
+msgid "Active"
+msgstr "Aktif"
+
+#: app/templates/master_data/coordinators.html:56
+#: app/templates/master_data/officers.html:58
+msgid "Inactive"
+msgstr "Tidak Aktif"
+
+#: app/templates/master_data/coordinators.html:63
+#: app/templates/master_data/officers.html:75
+msgid "Edit"
+msgstr "Ubah"
+
+#: app/templates/master_data/coordinators.html:66
+msgid "Delete"
+msgstr "Hapus"
+
+#: app/templates/master_data/index.html:10
+msgid "Manage system master data"
+msgstr "Kelola data induk sistem"
+
+#: app/templates/master_data/index.html:21
+msgid "Manage coordinators"
+msgstr "Kelola koordinator"
+
+#: app/templates/master_data/index.html:32
+#: app/templates/master_data/officers.html:3
+#: app/templates/master_data/officers.html:15
+#: app/templates/master_data/officers.html:20
+#: app/templates/master_data/officers.html:25
+msgid "Officers"
+msgstr "Petugas"
+
+#: app/templates/master_data/index.html:33
+msgid "Manage field officers"
+msgstr "Kelola petugas lapangan"
+
+#: app/templates/master_data/index.html:44
+#: app/templates/master_data/reset_umt.html:3
+#: app/templates/master_data/reset_umt.html:15
+#: app/templates/master_data/reset_umt.html:20
+msgid "Reset UMT"
+msgstr "Reset UMT"
+
+#: app/templates/master_data/index.html:45
+msgid "Reset UMT updates"
+msgstr "Reset pembaruan UMT"
+
+#: app/templates/master_data/officers.html:27
+msgid "Add Officer"
+msgstr "Tambah Petugas"
+
+#: app/templates/master_data/officers.html:38
+msgid "RBM Code"
+msgstr "Kode RBM"
+
+#: app/templates/master_data/officers.html:39
+msgid "Coordinator"
+msgstr "Koordinator"
+
+#: app/templates/master_data/officers.html:41
+msgid "IMEI"
+msgstr "IMEI"
+
+#: app/templates/master_data/officers.html:62
+msgid "Not Set"
+msgstr "Belum Diatur"
+
+#: app/templates/master_data/officers.html:66
+msgid "Toggle Active"
+msgstr "Ubah Status Aktif"
+
+#: app/templates/master_data/officers.html:70
+msgid "Are you sure you want to reset the IMEI?"
+msgstr "Apakah Anda yakin ingin mereset IMEI?"
+
+#: app/templates/master_data/officers.html:71
+msgid "Reset IMEI"
+msgstr "Reset IMEI"
+
+#: app/templates/master_data/reset_umt.html:24
+msgid "Reset UMT Updates"
+msgstr "Reset Pembaruan UMT"
+
+#: app/templates/master_data/reset_umt.html:25
+msgid "Perform UMT update reset operations"
+msgstr "Lakukan operasi reset pembaruan UMT"
+
+#: app/templates/master_data/reset_umt.html:31
+msgid "Reset Options"
+msgstr "Opsi Reset"
+
+#: app/templates/master_data/reset_umt.html:36
+msgid "Reset all UMT data"
+msgstr "Reset semua data UMT"
+
+#: app/templates/master_data/reset_umt.html:42
+msgid "Reset UMT configurations"
+msgstr "Reset konfigurasi UMT"
+
+#: app/templates/master_data/reset_umt.html:48
+msgid "Clear UMT logs"
+msgstr "Hapus log UMT"
+
+#: app/templates/master_data/reset_umt.html:59
+msgid ""
+"Resetting UMT updates will clear all temporary data and configurations. "
+"This action cannot be undone. Please confirm before proceeding."
+msgstr "Mereset pembaruan UMT akan menghapus semua data sementara dan konfigurasi. Tindakan ini tidak dapat dibatalkan. Mohon konfirmasi sebelum melanjutkan."
+
+#: app/templates/master_data/reset_umt.html:67
+msgid "Perform Reset"
+msgstr "Lakukan Reset"
+
+#: app/templates/master_data/reset_umt.html:73
+msgid "Reset History"
+msgstr "Riwayat Reset"
+
+#: app/templates/master_data/reset_umt.html:78
+msgid "Date"
+msgstr "Tanggal"
+
+#: app/templates/master_data/reset_umt.html:79
+msgid "User"
+msgstr "Pengguna"
+
+#: app/templates/master_data/reset_umt.html:80
+msgid "Action"
+msgstr "Tindakan"
+
+#: app/templates/master_data/reset_umt.html:86
+msgid "No reset history available"
+msgstr "Tidak ada riwayat reset yang tersedia"
+
+#: app/templates/reports/index.html:10
+msgid "View and analyze system reports and monitoring data"
+msgstr "Lihat dan analisis laporan sistem dan data pemantauan"
+
+#: app/templates/reports/index.html:20
+msgid "Rekap per RBM"
+msgstr "Rekap per RBM"
+
+#: app/templates/reports/index.html:21
+msgid "Report by RBM code"
+msgstr "Laporan berdasarkan kode RBM"
+
+#: app/templates/reports/index.html:32
+msgid "Rekap per Coordinator"
+msgstr "Rekap per Koordinator"
+
+#: app/templates/reports/index.html:33
+msgid "Report by coordinator"
+msgstr "Laporan berdasarkan koordinator"
+
+#: app/templates/reports/index.html:44
+msgid "Rekap per Officer"
+msgstr "Rekap per Petugas"
+
+#: app/templates/reports/index.html:45
+msgid "Report by field officer"
+msgstr "Laporan berdasarkan petugas lapangan"
+
+#: app/templates/reports/index.html:56
+msgid "Rekap per Area"
+msgstr "Rekap per Area"
+
+#: app/templates/reports/index.html:57
+msgid "Report by area"
+msgstr "Laporan berdasarkan area"
+
+#: app/templates/reports/index.html:68
+msgid "Rekap Tunggakan"
+msgstr "Rekap Tunggakan"
+
+#: app/templates/reports/index.html:69
+msgid "Outstanding payments report"
+msgstr "Laporan pembayaran terutang"
+
+#: app/templates/reports/index.html:80
+msgid "WA Sending Monitoring"
+msgstr "Pemantauan Pengiriman WA"
+
+#: app/templates/reports/index.html:81
+msgid "WhatsApp communication logs"
+msgstr "Log komunikasi WhatsApp"
+
+#: app/templates/reports/index.html:92
+msgid "Log Monitoring"
+msgstr "Pemantauan Log"
+
+#: app/templates/reports/index.html:93
+msgid "System monitoring logs"
+msgstr "Log pemantauan sistem"
+
+#: app/templates/reports/index.html:104
+msgid "Daily Settlement Monitoring"
+msgstr "Pemantauan Penyelesaian Harian"
+
+#: app/templates/reports/index.html:105
+msgid "Daily settlement reports"
+msgstr "Laporan penyelesaian harian"
+
+#: app/templates/reports/index.html:116
+msgid "Bluetooth Print Monitoring"
+msgstr "Pemantauan Cetak Bluetooth"
+
+#: app/templates/reports/index.html:117
+msgid "Print log monitoring"
+msgstr "Pemantauan log cetak"
+
+#: app/templates/talangan/index.html:9
+msgid "Talangan (Advance Fund)"
+msgstr "Talangan (Dana Talangan)"
+
+#: app/templates/talangan/index.html:10
+msgid "Manage advance fund operations"
+msgstr "Kelola operasi dana talangan"
+
+#: app/templates/talangan/index.html:20
+msgid "Balance Monitoring"
+msgstr "Pemantauan Saldo"
+
+#: app/templates/talangan/index.html:21
+msgid "Monitor talangan balance"
+msgstr "Pantau saldo talangan"
+
+#: app/templates/talangan/index.html:32
+msgid "Daily Target"
+msgstr "Target Harian"
+
+#: app/templates/talangan/index.html:33
+msgid "Monitor daily targets"
+msgstr "Pantau target harian"
+
+#: app/templates/talangan/index.html:44
+msgid "Daily Transaction Totals"
+msgstr "Total Transaksi Harian"
+
+#: app/templates/talangan/index.html:45
+msgid "View daily transactions"
+msgstr "Lihat transaksi harian"
+
+#: app/templates/talangan/index.html:56
+msgid "Detail Payments"
+msgstr "Detail Pembayaran"
+
+#: app/templates/talangan/index.html:57
+msgid "Cash/installment details"
+msgstr "Detail tunai/cicilan"
+
+#: app/templates/talangan/index.html:68
+msgid "Input Settlement"
+msgstr "Input Penyelesaian"
+
+#: app/templates/talangan/index.html:69
+msgid "Input settlement data"
+msgstr "Input data penyelesaian"
+
+#: app/templates/talangan/index.html:80
+msgid "Approval Process"
+msgstr "Proses Persetujuan"
+
+#: app/templates/talangan/index.html:81
+msgid "Manage approvals"
+msgstr "Kelola persetujuan"

@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
 from flask_login import login_required
+from flask_babel import _
 from app.models import Transaction, User, Officer
 from app import db
 from datetime import datetime, timedelta
