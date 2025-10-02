@@ -25,49 +25,51 @@
     <p class="text-gray-600 dark:text-gray-400">{{ _('Perform UMT update reset operations') }}</p>
 </div>
 
-<div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6 mb-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-            <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">{{ _('Reset Options') }}</h3>
-            <div class="space-y-4">
-                <div class="flex items-start">
-                    <input type="checkbox" id="reset_data" class="mt-1 h-4 w-4 text-blue-600 rounded">
-                    <label for="reset_data" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                        {{ _('Reset all UMT data') }}
-                    </label>
+<form method="POST" action="{{ url_for('master_data.reset_umt') }}">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6 mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">{{ _('Reset Options') }}</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="reset_users" name="reset_users" value="1" class="mt-1 h-4 w-4 text-blue-600 rounded">
+                        <label for="reset_users" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                            {{ _('Reset User IMEI Data') }}
+                        </label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="checkbox" id="reset_transactions" name="reset_transactions" value="1" class="mt-1 h-4 w-4 text-blue-600 rounded">
+                        <label for="reset_transactions" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                            {{ _('Reset Transaction Data') }}
+                        </label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="checkbox" id="reset_talangan" name="reset_talangan" value="1" class="mt-1 h-4 w-4 text-blue-600 rounded">
+                        <label for="reset_talangan" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                            {{ _('Reset Talangan Data') }}
+                        </label>
+                    </div>
                 </div>
-                <div class="flex items-start">
-                    <input type="checkbox" id="reset_config" class="mt-1 h-4 w-4 text-blue-600 rounded">
-                    <label for="reset_config" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                        {{ _('Reset UMT configurations') }}
-                    </label>
-                </div>
-                <div class="flex items-start">
-                    <input type="checkbox" id="reset_logs" class="mt-1 h-4 w-4 text-blue-600 rounded">
-                    <label for="reset_logs" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                        {{ _('Clear UMT logs') }}
-                    </label>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">{{ _('Information') }}</h3>
+                <div class="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 p-4 rounded-lg">
+                    <p class="text-sm text-blue-800 dark:text-blue-200">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        {{ _('Resetting UMT updates will clear all selected data. This action cannot be undone. Please confirm before proceeding.') }}
+                    </p>
                 </div>
             </div>
         </div>
         
-        <div>
-            <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">{{ _('Information') }}</h3>
-            <div class="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 p-4 rounded-lg">
-                <p class="text-sm text-blue-800 dark:text-blue-200">
-                    <i class="fas fa-info-circle mr-2"></i>
-                    {{ _('Resetting UMT updates will clear all temporary data and configurations. This action cannot be undone. Please confirm before proceeding.') }}
-                </p>
-            </div>
+        <div class="mt-6">
+            <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg" onclick="return confirm('{{ _('Are you sure you want to proceed with the reset? This action cannot be undone.') }}')">
+                <i class="fas fa-sync-alt mr-1"></i> {{ _('Perform Reset') }}
+            </button>
         </div>
     </div>
-    
-    <div class="mt-6">
-        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg">
-            <i class="fas fa-sync-alt mr-1"></i> {{ _('Perform Reset') }}
-        </button>
-    </div>
-</div>
+</form>
 
 <div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6">
     <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">{{ _('Reset History') }}</h3>

@@ -19,7 +19,7 @@ class User(UserMixin, db.Model):
     
     # Relationships
     area = db.relationship('Area', backref='users')
-    officer = db.relationship('Officer', uselist=False, backref='user', foreign_keys='Officer.user_id')
+    officer = db.relationship('Officer', uselist=False, back_populates='user', foreign_keys='Officer.user_id')
     
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -52,6 +52,7 @@ class Officer(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
     # Relationships
+    user = db.relationship('User', foreign_keys=[user_id], back_populates='officer')
     coordinator = db.relationship('User', foreign_keys=[coordinator_id])
     
     def __repr__(self):

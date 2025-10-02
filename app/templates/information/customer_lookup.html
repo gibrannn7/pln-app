@@ -28,7 +28,7 @@
 <div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6 mb-6">
     <form method="POST" action="{{ url_for('information.customer_lookup') }}">
         <div class="flex">
-            <input type="text" name="idpel" placeholder="{{ _('Enter ID Pelanggan') }}" required
+            <input type="text" name="search_query" placeholder="{{ _('Enter ID Pelanggan') }}" required
                    class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
             <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-r-lg">
                 <i class="fas fa-search mr-1"></i> {{ _('Search') }}

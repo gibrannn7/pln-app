@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_required
 from flask_babel import _
-from app.models import TalanganTransaction, Officer
+from app.models import TalanganTransaction, Officer, User
 from app import db
 
 talangan_bp = Blueprint('talangan', __name__)
@@ -31,6 +31,58 @@ def transactions():
     # Get all talangan transactions
     transactions = TalanganTransaction.query.join(Officer).order_by(TalanganTransaction.date.desc()).all()
     return render_template('talangan/transactions.html', transactions=transactions)
+
+@talangan_bp.route('/transactions/add', methods=['GET', 'POST'])
+@login_required
+def add_transaction():
+    if request.method == 'POST':
+        idpel = request.form.get('idpel')
+        amount = request.form.get('amount')
+        date = request.form.get('date')
+        officer_id = request.form.get('officer_id')
+        
+        # Create new transaction
+        transaction = TalanganTransaction(
+            idpel=idpel,
+            amount=amount,
+            date=date,
+            officer_id=officer_id
+        )
+        db.session.add(transaction)
+        db.session.commit()
+        flash(_('Talangan transaction added successfully'), 'success')
+        return redirect(url_for('talangan.transactions'))
+    
+    officers = Officer.query.join(User, Officer.user_id == User.id).all()
+    return render_template('talangan/add_transaction.html', officers=officers)
+
+@talangan_bp.route('/transactions/edit/<int:id>', methods=['GET', 'POST'])
+@login_required
+def edit_transaction(id):
+    transaction = TalanganTransaction.query.get_or_404(id)
+    
+    if request.method == 'POST':
+        transaction.idpel = request.form.get('idpel')
+        transaction.amount = request.form.get('amount')
+        transaction.date = request.form.get('date')
+        transaction.officer_id = request.form.get('officer_id')
+        transaction.status = request.form.get('status', 'pending')
+        
+        db.session.commit()
+        flash(_('Talangan transaction updated successfully'), 'success')
+        return redirect(url_for('talangan.transactions'))
+    
+    officers = Officer.query.join(User, Officer.user_id == User.id).all()
+    return render_template('talangan/edit_transaction.html', transaction=transaction, officers=officers)
+
+@talangan_bp.route('/transactions/delete/<int:id>', methods=['POST'])
+@login_required
+def delete_transaction(id):
+    transaction = TalanganTransaction.query.get_or_404(id)
+    db.session.delete(transaction)
+    db.session.commit()
+    flash(_('Talangan transaction deleted successfully'), 'success')
+    return redirect(url_for('talangan.transactions'))
 
 @talangan_bp.route('/detail-payments')
 @login_required

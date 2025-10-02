@@ -5,7 +5,7 @@ from app.models import Transaction, User, Officer, Area, WALog, PrintLog, Monito
 from app import db
 from datetime import datetime, timedelta
 from sqlalchemy import func
-from app.utils import export_transactions_to_excel, export_to_excel
+from app.utils import export_transactions_to_excel, export_to_excel, export_to_pdf
 import decimal
 
 reports_bp = Blueprint('reports', __name__)
@@ -59,7 +59,7 @@ def area():
         Area.name,
         func.count(Transaction.id).label('count'),
         func.sum(Transaction.total).label('total')
-    ).join(Officer, Area.code == User.area_code).join(User, Officer.user_id == User.id).join(Transaction, Officer.id == Transaction.officer_id).group_by(Area.code).all()
+    ).select_from(Area).join(User, Area.code == User.area_code).join(Officer, User.id == Officer.user_id).join(Transaction, Officer.id == Transaction.officer_id).group_by(Area.code).all()
     
     return render_template('reports/area.html', area_data=area_data)
 
@@ -131,9 +131,17 @@ def rbm_export(format):
             as_attachment=True,
             download_name=filename
         )
+    elif format == 'pdf':
+        headers = ['RBM Code', 'Count', 'Total']
+        output, filename = export_to_pdf(rbm_data, headers, 'rbm_report', 'RBM Report')
+        return send_file(
+            output,
+            mimetype='application/pdf',
+            as_attachment=True,
+            download_name=filename
+        )
     else:
-        # For now, only Excel is implemented
-        flash('PDF export not yet implemented', 'warning')
+        flash('Invalid export format', 'error')
         return redirect(url_for('reports.rbm'))
 
 @reports_bp.route('/coordinator/export/<format>')
@@ -154,9 +162,17 @@ def coordinator_export(format):
             as_attachment=True,
             download_name=filename
         )
+    elif format == 'pdf':
+        headers = ['Username', 'Count', 'Total']
+        output, filename = export_to_pdf(coordinator_data, headers, 'coordinator_report', 'Coordinator Report')
+        return send_file(
+            output,
+            mimetype='application/pdf',
+            as_attachment=True,
+            download_name=filename
+        )
     else:
-        # For now, only Excel is implemented
-        flash('PDF export not yet implemented', 'warning')
+        flash('Invalid export format', 'error')
         return redirect(url_for('reports.coordinator'))
 
 @reports_bp.route('/officer/export/<format>')
@@ -177,9 +193,17 @@ def officer_export(format):
             as_attachment=True,
             download_name=filename
         )
+    elif format == 'pdf':
+        headers = ['Username', 'Count', 'Total']
+        output, filename = export_to_pdf(officer_data, headers, 'officer_report', 'Officer Report')
+        return send_file(
+            output,
+            mimetype='application/pdf',
+            as_attachment=True,
+            download_name=filename
+        )
     else:
-        # For now, only Excel is implemented
-        flash('PDF export not yet implemented', 'warning')
+        flash('Invalid export format', 'error')
         return redirect(url_for('reports.officer'))
 
 @reports_bp.route('/tunggakan/export/<format>')
@@ -195,7 +219,29 @@ def tunggakan_export(format):
             as_attachment=True,
             download_name=filename
         )
+    elif format == 'pdf':
+        headers = ['ID', 'ID Pelanggan', 'Periode', 'Total', 'Tipe Pembayaran', 'Status', 'Petugas', 'Tanggal Dibuat']
+        processed_data = []
+        for t in tunggakan_data:
+            processed_t = [
+                t.id,
+                t.idpel,
+                t.periode,
+                float(t.total) if t.total else 0,
+                t.payment_type,
+                t.status,
+                t.officer.user.username if t.officer and t.officer.user else 'N/A',
+                t.created_at
+            ]
+            processed_data.append(processed_t)
+        
+        output, filename = export_to_pdf(processed_data, headers, 'tunggakan_report', 'Outstanding Payment Report')
+        return send_file(
+            output,
+            mimetype='application/pdf',
+            as_attachment=True,
+            download_name=filename
+        )
     else:
-        # For now, only Excel is implemented
-        flash('PDF export not yet implemented', 'warning')
+        flash('Invalid export format', 'error')
         return redirect(url_for('reports.tunggakan'))

@@ -108,3 +108,100 @@ def export_transactions_to_excel(transactions):
         processed_transactions.append(processed_t)
     
     return export_to_excel(processed_transactions, headers, 'transactions')
+
+def export_to_pdf(query_result, headers, filename_prefix, title="Report"):
+    """Export query results to PDF using ReportLab"""
+    try:
+        from reportlab.lib.pagesizes import letter, A4
+        from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
+        from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+        from reportlab.lib import colors
+        from reportlab.lib.units import inch
+        
+        # Create a BytesIO buffer
+        buffer = BytesIO()
+        
+        # Create the PDF document
+        doc = SimpleDocTemplate(buffer, pagesize=A4)
+        elements = []
+        
+        # Add title
+        styles = getSampleStyleSheet()
+        title_style = ParagraphStyle(
+            'CustomTitle',
+            parent=styles['Heading1'],
+            fontSize=18,
+            spaceAfter=30,
+            alignment=1  # Center alignment
+        )
+        title_para = Paragraph(title, title_style)
+        elements.append(title_para)
+        
+        # Add some space
+        elements.append(Spacer(1, 0.25 * inch))
+        
+        # Prepare data for the table
+        data = [headers]  # Header row
+        
+        for row in query_result:
+            row_data = []
+            for header in headers:
+                if hasattr(row, header):
+                    value = getattr(row, header)
+                elif isinstance(row, (list, tuple)):
+                    # Handle tuple results from aggregate queries
+                    if headers.index(header) < len(row):
+                        value = row[headers.index(header)]
+                    else:
+                        value = None
+                else:
+                    value = None
+                    
+                # Format dates and decimals appropriately
+                if isinstance(value, datetime):
+                    value = value.strftime('%Y-%m-%d %H:%M:%S')
+                elif hasattr(value, 'strftime'):  # Other datetime objects
+                    value = value.strftime('%Y-%m-%d %H:%M:%S')
+                elif isinstance(value, decimal.Decimal):
+                    value = float(value)
+                elif value is None:
+                    value = ''
+                    
+                row_data.append(str(value))
+            data.append(row_data)
+        
+        # Create table
+        table = Table(data)
+        
+        # Add table style
+        style = TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+            ('FONTSIZE', (0, 0), (-1, 0), 10),
+            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+            ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+            ('FONTSIZE', (0, 1), (-1, -1), 8),
+            ('GRID', (0, 0), (-1, -1), 1, colors.black)
+        ])
+        table.setStyle(style)
+        
+        # Add table to elements
+        elements.append(table)
+        
+        # Build PDF
+        doc.build(elements)
+        
+        # Move buffer to the beginning
+        buffer.seek(0)
+        
+        # Generate filename with timestamp
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = f"{filename_prefix}_{timestamp}.pdf"
+        
+        return buffer, filename
+        
+    except ImportError:
+        # If reportlab is not installed, return an error
+        raise ImportError("reportlab is required for PDF export. Install it with: pip install reportlab")

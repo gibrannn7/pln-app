@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Anomaly Master - Anomaly{% endblock %}
+
+{% block breadcrumb %}
+<li aria-current="page">
+    <div class="flex items-center">
+        <i class="fas fa-chevron-right text-gray-400 text-xs mx-2"></i>
+        <a href="{{ url_for('anomaly.index') }}" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">HO Anomaly Module</a>
+    </div>
+</li>
+<li aria-current="page">
+    <div class="flex items-center">
+        <i class="fas fa-chevron-right text-gray-400 text-xs mx-2"></i>
+        <a href="{{ url_for('anomaly.master_data') }}" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Master Data</a>
+    </div>
+</li>
+<li aria-current="page">
+    <div class="flex items-center">
+        <i class="fas fa-chevron-right text-gray-400 text-xs mx-2"></i>
+        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Edit Master Data</span>
+    </div>
+</li>
+{% endblock %}
+
+{% block current_page %}Edit Master Data{% endblock %}
+
+{% block content %}
+<div class="mb-6">
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Edit Anomaly Master Data</h1>
+</div>
+
+<div class="max-w-2xl mx-auto">
+    <form method="POST" action="{{ url_for('anomaly.edit_anomaly_master', id=anomaly_master.id) }}" class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6">
+        <div class="grid grid-cols-1 gap-6">
+            <div>
+                <label for="code" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Code</label>
+                <input type="text" id="code" name="code" value="{{ anomaly_master.code }}" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+            </div>
+            
+            <div>
+                <label for="category" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Category</label>
+                <select id="category" name="category" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                    <option value="">Select Category</option>
+                    <option value="meter_reading" {% if anomaly_master.category == 'meter_reading' %}selected{% endif %}>Meter Reading</option>
+                    <option value="payment" {% if anomaly_master.category == 'payment' %}selected{% endif %}>Payment</option>
+                    <option value="billing" {% if anomaly_master.category == 'billing' %}selected{% endif %}>Billing</option>
+                    <option value="service" {% if anomaly_master.category == 'service' %}selected{% endif %}>Service Issue</option>
+                    <option value="technical" {% if anomaly_master.category == 'technical' %}selected{% endif %}>Technical Problem</option>
+                    <option value="complaint" {% if anomaly_master.category == 'complaint' %}selected{% endif %}>Customer Complaint</option>
+                    <option value="other" {% if anomaly_master.category == 'other' %}selected{% endif %}>Other</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description</label>
+                <textarea id="description" name="description" rows="4" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">{{ anomaly_master.description }}</textarea>
+            </div>
+            
+            <div class="flex items-start">
+                <div class="flex items-center h-5">
+                    <input id="active" name="active" type="checkbox" {% if anomaly_master.active %}checked{% endif %} class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 dark:border-gray-600 rounded">
+                </div>
+                <div class="ml-3 text-sm">
+                    <label for="active" class="font-medium text-gray-700 dark:text-gray-300">Active</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-6 flex justify-end space-x-3">
+            <a href="{{ url_for('anomaly.master_data') }}" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                Cancel
+            </a>
+            <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
+                Update Master Data
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
