@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-10-01 21:03+0700\n"
+"POT-Creation-Date: 2025-10-02 10:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: app/routes/auth.py:37
-msgid "Captcha verification failed. Please try again."
+#: app/routes/auth.py:20
+msgid "Invalid captcha. Please try again."
 msgstr ""
 
-#: app/routes/auth.py:59
-msgid "Invalid username or password"
+#: app/routes/auth.py:27
+msgid "Invalid username or password."
 msgstr ""
 
-#: app/routes/auth.py:72
+#: app/routes/auth.py:34
 msgid "You have been logged out."
 msgstr ""
 
-#: app/routes/auth.py:85
+#: app/routes/auth.py:44
 msgid "Current password is incorrect"
 msgstr ""
 
-#: app/routes/auth.py:90
+#: app/routes/auth.py:48
 msgid "New passwords do not match"
 msgstr ""
 
-#: app/routes/auth.py:97
+#: app/routes/auth.py:54
 msgid "Password updated successfully"
 msgstr ""
 
@@ -49,74 +49,476 @@ msgstr ""
 msgid "Language changed to English"
 msgstr ""
 
-#: app/routes/master_data.py:36
-msgid "active"
-msgstr ""
-
-#: app/routes/master_data.py:36
-msgid "inactive"
-msgstr ""
-
-#: app/routes/master_data.py:37
+#: app/routes/master_data.py:157
 #, python-format
 msgid "Officer status updated to %(status)s"
 msgstr ""
 
-#: app/routes/master_data.py:49
+#: app/routes/master_data.py:167
 msgid "Officer IMEI reset successfully"
 msgstr ""
 
-#: app/templates/anomaly/index.html:3 app/templates/auth/login.html:10
+#: app/routes/reports.py:175 app/routes/reports.py:195
+#: app/routes/reports.py:215 app/routes/reports.py:257
+msgid "Invalid export format"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:3
+msgid "Report Anomaly - Anomaly"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:15
+msgid "Report Anomaly"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:21
+msgid "Report New Anomaly"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:26
+msgid "ID Pelanggan"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:31
+msgid "Anomaly Type"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:33
+msgid "Select Anomaly Type"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:34
+msgid "Meter Reading"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:35
+msgid "Payment"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:36
+msgid "Billing"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:37
+msgid "Service Issue"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:38
+msgid "Technical Problem"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:39
+msgid "Customer Complaint"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:40
+msgid "Other"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:45
+msgid "Description"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:52
+msgid "Cancel"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly.html:55
+msgid "Submit Report"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:3
+msgid "Add Anomaly Master - Anomaly"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:15
+#: app/templates/anomaly/master_data.html:27
+msgid "Add Master Data"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:21
+#: app/templates/anomaly/master_data.html:21
+msgid "Anomaly Master Data"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:26
+#: app/templates/anomaly/edit_anomaly_master.html:26
+#: app/templates/anomaly/master_data.html:38
+msgid "Code"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:31
+#: app/templates/anomaly/edit_anomaly_master.html:31
+#: app/templates/anomaly/master_data.html:40
+msgid "Category"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:33
+#: app/templates/anomaly/edit_anomaly_master.html:33
+msgid "Select Category"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:34
+#: app/templates/anomaly/edit_anomaly_master.html:34
+msgid "Meter Reading"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:35
+#: app/templates/anomaly/edit_anomaly_master.html:35
+msgid "Payment"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:36
+#: app/templates/anomaly/edit_anomaly_master.html:36
+msgid "Billing"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:37
+#: app/templates/anomaly/edit_anomaly_master.html:37
+msgid "Service Issue"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:38
+#: app/templates/anomaly/edit_anomaly_master.html:38
+msgid "Technical Problem"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:39
+#: app/templates/anomaly/edit_anomaly_master.html:39
+msgid "Customer Complaint"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:40
+#: app/templates/anomaly/edit_anomaly_master.html:40
+msgid "Other"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:45
+#: app/templates/anomaly/edit_anomaly_master.html:45
+msgid "Description"
+msgstr ""
+
+#: app/templates/anomaly/add_anomaly_master.html:51
+#: app/templates/anomaly/edit_anomaly_master.html:54
+#: app/templates/anomaly/master_data.html:41
+msgid "Active"
+msgstr ""
+
+#: app/templates/anomaly/daily_reports.html:3
+msgid "Daily Reports - Anomaly"
+msgstr ""
+
+#: app/templates/anomaly/daily_reports.html:15
+msgid "Daily Reports"
+msgstr ""
+
+#: app/templates/anomaly/daily_reports.html:21
+msgid "Daily Anomaly Reports"
+msgstr ""
+
+#: app/templates/anomaly/daily_reports.html:38
+msgid "Type"
+msgstr ""
+
+#: app/templates/anomaly/daily_reports.html:41
+msgid "Reported By"
+msgstr ""
+
+#: app/templates/anomaly/daily_reports.html:42
+msgid "Date"
+msgstr ""
+
+#: app/templates/anomaly/daily_reports.html:71
+msgid "Resolve"
+msgstr ""
+
+#: app/templates/anomaly/daily_reports.html:77
+msgid "Delete"
+msgstr ""
+
+#: app/templates/anomaly/daily_reports.html:87
+#: app/templates/anomaly/recap_date.html:78
+#: app/templates/anomaly/recap_officer.html:61
+msgid "No anomaly data available"
+msgstr ""
+
+#: app/templates/anomaly/daily_reports.html:88
+msgid "There are no anomaly reports to display at this time."
+msgstr ""
+
+#: app/templates/anomaly/edit_anomaly.html:3
+msgid "Edit Anomaly - Anomaly"
+msgstr ""
+
+#: app/templates/anomaly/edit_anomaly.html:15
+msgid "Edit Anomaly"
+msgstr ""
+
+#: app/templates/anomaly/edit_anomaly.html:21
+msgid "Edit Anomaly Report"
+msgstr ""
+
+#: app/templates/anomaly/edit_anomaly.html:61
+msgid "Reported"
+msgstr ""
+
+#: app/templates/anomaly/edit_anomaly.html:62
+msgid "Investigating"
+msgstr ""
+
+#: app/templates/anomaly/edit_anomaly.html:63
+msgid "Resolved"
+msgstr ""
+
+#: app/templates/anomaly/edit_anomaly.html:72
+msgid "Update Report"
+msgstr ""
+
+#: app/templates/anomaly/edit_anomaly_master.html:3
+msgid "Edit Anomaly Master - Anomaly"
+msgstr ""
+
+#: app/templates/anomaly/edit_anomaly_master.html:15
+#: app/templates/anomaly/master_data.html:15
+msgid "Master Data"
+msgstr ""
+
+#: app/templates/anomaly/edit_anomaly_master.html:21
+msgid "Edit Anomaly Master Data"
+msgstr ""
+
+#: app/templates/anomaly/edit_anomaly_master.html:66
+msgid "Update Master Data"
+msgstr ""
+
+#: app/templates/anomaly/index.html:3
+msgid "HO Anomaly Module - PLN Application"
+msgstr ""
+
+#: app/templates/anomaly/index.html:5
+msgid "HO Anomaly Module"
+msgstr ""
+
+#: app/templates/anomaly/index.html:9
+msgid "Manage and monitor anomalies"
+msgstr ""
+
+#: app/templates/anomaly/index.html:32
+msgid "Anomalies by officer"
+msgstr ""
+
+#: app/templates/anomaly/index.html:43
+msgid "Anomalies by date"
+msgstr ""
+
+#: app/templates/anomaly/index.html:54
+msgid "Manage anomaly types"
+msgstr ""
+
+#: app/templates/anomaly/master_data.html:3
+msgid "Master Data - Anomaly"
+msgstr ""
+
+#: app/templates/anomaly/master_data.html:42
+msgid "Actions"
+msgstr ""
+
+#: app/templates/anomaly/master_data.html:52
+msgid "Edit"
+msgstr ""
+
+#: app/templates/anomaly/master_data.html:65
+msgid "No master data available"
+msgstr ""
+
+#: app/templates/anomaly/master_data.html:66
+msgid "There is no anomaly master data to display at this time."
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:3
+msgid "Recap by Date - Anomaly"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:15
+msgid "Recap by Date"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:21
+msgid "Anomaly Recap by Date"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:26
+msgid "Start Date"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:30
+msgid "End Date"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:35
+msgid "Filter"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:42
+msgid "Anomalies by Date"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:49
+msgid "Total Anomalies"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:50
+msgid "Reported"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:51
+msgid "Investigating"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:52
+msgid "Resolved"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:62
+msgid "Anomaly Trend Chart"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:68
+msgid "Anomaly trend chart by date"
+msgstr ""
+
+#: app/templates/anomaly/recap_date.html:79
+msgid "There is no anomaly data to display at this time."
+msgstr ""
+
+#: app/templates/anomaly/recap_officer.html:3
+msgid "Recap by Officer - Anomaly"
+msgstr ""
+
+#: app/templates/anomaly/recap_officer.html:15
+msgid "Recap by Officer"
+msgstr ""
+
+#: app/templates/anomaly/recap_officer.html:21
+msgid "Anomaly Recap by Officer"
+msgstr ""
+
+#: app/templates/anomaly/recap_officer.html:25
+msgid "Anomalies by Officer"
+msgstr ""
+
+#: app/templates/anomaly/recap_officer.html:32
+msgid "Officer"
+msgstr ""
+
+#: app/templates/anomaly/recap_officer.html:45
+msgid "Anomaly Distribution Chart"
+msgstr ""
+
+#: app/templates/anomaly/recap_officer.html:51
+msgid "Anomaly distribution chart by officer"
+msgstr ""
+
+#: app/templates/anomaly/recap_officer.html:62
+msgid "There is no anomaly data to display at this time."
+msgstr ""
+
+#: app/templates/auth/change_password.html:3
+msgid "Change Password - PLN Application"
+msgstr ""
+
+#: app/templates/auth/change_password.html:5
+msgid "Change Password"
+msgstr ""
+
+#: app/templates/auth/change_password.html:9
+msgid "Current Password"
+msgstr ""
+
+#: app/templates/auth/change_password.html:15
+msgid "New Password"
+msgstr ""
+
+#: app/templates/auth/change_password.html:21
+msgid "Confirm New Password"
+msgstr ""
+
+#: app/templates/auth/login.html:3 app/templates/base.html:5
 #: app/templates/base.html:46 app/templates/dashboard/index.html:3
 #: app/templates/information/index.html:3
-#: app/templates/master_data/index.html:3 app/templates/reports/index.html:3
+#: app/templates/master_data/add_coordinator.html:3
+#: app/templates/master_data/coordinators.html:3
+#: app/templates/master_data/edit_coordinator.html:3
+#: app/templates/master_data/index.html:3
+#: app/templates/master_data/officers.html:3
+#: app/templates/master_data/reset_umt.html:3
+#: app/templates/reports/area.html:3
+#: app/templates/reports/bluetooth_print.html:3
+#: app/templates/reports/coordinator.html:3
+#: app/templates/reports/daily_settlement.html:3
+#: app/templates/reports/index.html:3
+#: app/templates/reports/log_monitoring.html:3
+#: app/templates/reports/officer.html:3 app/templates/reports/rbm.html:3
+#: app/templates/reports/tunggakan.html:3
+#: app/templates/reports/wa_monitoring.html:3
+#: app/templates/talangan/add_transaction.html:3
+#: app/templates/talangan/approval.html:3
+#: app/templates/talangan/balance.html:3
+#: app/templates/talangan/daily_target.html:3
+#: app/templates/talangan/detail_payments.html:3
+#: app/templates/talangan/edit_transaction.html:3
 #: app/templates/talangan/index.html:3
+#: app/templates/talangan/input_settlement.html:3
+#: app/templates/talangan/transactions.html:3
 msgid "PLN Application"
+msgstr ""
+
+#: app/templates/auth/login.html:12
+msgid "Login to your account"
+msgstr ""
+
+#: app/templates/auth/login.html:24
+msgid "Username"
+msgstr ""
+
+#: app/templates/auth/login.html:37
+msgid "Password"
+msgstr ""
+
+#: app/templates/auth/login.html:51
+msgid "Captcha"
+msgstr ""
+
+#: app/templates/auth/login.html:58
+msgid "Enter the answer"
+msgstr ""
+
+#: app/templates/auth/login.html:66
+msgid "Login"
 msgstr ""
 
 #: app/templates/base.html:80
 msgid "Navigation"
 msgstr ""
 
-#: app/templates/base.html:85 app/templates/dashboard/index.html:3
-#: app/templates/dashboard/index.html:5 app/templates/dashboard/index.html:9
+#: app/templates/base.html:85
 msgid "Dashboard"
 msgstr ""
 
-#: app/templates/base.html:92 app/templates/master_data/coordinators.html:3
-#: app/templates/master_data/coordinators.html:9
-#: app/templates/master_data/index.html:3
-#: app/templates/master_data/index.html:5
-#: app/templates/master_data/index.html:9
-#: app/templates/master_data/officers.html:3
-#: app/templates/master_data/officers.html:9
-#: app/templates/master_data/reset_umt.html:3
-#: app/templates/master_data/reset_umt.html:9
+#: app/templates/base.html:92
 msgid "Master Data"
 msgstr ""
 
-#: app/templates/base.html:99 app/templates/reports/index.html:3
-#: app/templates/reports/index.html:5 app/templates/reports/index.html:9
+#: app/templates/base.html:99
 msgid "Reports & Monitoring"
 msgstr ""
 
-#: app/templates/base.html:105 app/templates/talangan/index.html:3
-#: app/templates/talangan/index.html:5
+#: app/templates/base.html:105
 msgid "Talangan"
 msgstr ""
 
-#: app/templates/base.html:111 app/templates/information/customer_lookup.html:3
-#: app/templates/information/customer_lookup.html:9
-#: app/templates/information/index.html:3
-#: app/templates/information/index.html:5
-#: app/templates/information/index.html:9
-#: app/templates/master_data/reset_umt.html:55
+#: app/templates/base.html:111
 msgid "Information"
-msgstr ""
-
-#: app/templates/anomaly/index.html:3 app/templates/anomaly/index.html:5
-#: app/templates/anomaly/index.html:9 app/templates/base.html:118
-msgid "HO Anomaly Module"
 msgstr ""
 
 #: app/templates/base.html:125
@@ -131,507 +533,831 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: app/templates/anomaly/index.html:10
-msgid "Manage and monitor anomalies"
-msgstr ""
-
-#: app/templates/anomaly/index.html:20
-msgid "Daily Anomaly Reports"
-msgstr ""
-
-#: app/templates/anomaly/index.html:21
-msgid "View daily anomaly reports"
-msgstr ""
-
-#: app/templates/anomaly/index.html:32
-msgid "Recap per Officer"
-msgstr ""
-
-#: app/templates/anomaly/index.html:33
-msgid "Anomalies by officer"
-msgstr ""
-
-#: app/templates/anomaly/index.html:44
-msgid "Recap per Date"
-msgstr ""
-
-#: app/templates/anomaly/index.html:45
-msgid "Anomalies by date"
-msgstr ""
-
-#: app/templates/anomaly/index.html:56
-msgid "Anomaly Master Data"
-msgstr ""
-
-#: app/templates/anomaly/index.html:57
-msgid "Manage anomaly types"
-msgstr ""
-
-#: app/templates/auth/change_password.html:3
-msgid "Change Password - PLN Application"
-msgstr ""
-
-#: app/templates/auth/change_password.html:5
-#: app/templates/auth/change_password.html:9
-#: app/templates/auth/change_password.html:31
-msgid "Change Password"
-msgstr ""
-
-#: app/templates/auth/change_password.html:13
-msgid "Current Password"
-msgstr ""
-
-#: app/templates/auth/change_password.html:19
-msgid "New Password"
-msgstr ""
-
-#: app/templates/auth/change_password.html:25
-msgid "Confirm New Password"
-msgstr ""
-
-#: app/templates/auth/login.html:3
-msgid "Login - PLN Application"
-msgstr ""
-
-#: app/templates/auth/login.html:12
-msgid "Login to your account"
-msgstr ""
-
-#: app/templates/auth/login.html:24
-#: app/templates/master_data/coordinators.html:37
-#: app/templates/master_data/officers.html:37
-msgid "Username"
-msgstr ""
-
-#: app/templates/auth/login.html:39
-msgid "Password"
-msgstr ""
-
-#: app/templates/auth/login.html:54
-msgid "Captcha"
-msgstr ""
-
-#: app/templates/auth/login.html:67
-msgid "Enter the answer"
-msgstr ""
-
-#: app/templates/auth/login.html:75
-msgid "Login"
-msgstr ""
-
-#: app/templates/dashboard/index.html:10
+#: app/templates/dashboard/index.html:5
 msgid "Welcome to your PLN Application dashboard"
 msgstr ""
 
-#: app/templates/dashboard/index.html:20
+#: app/templates/dashboard/index.html:11
 msgid "Total Transactions"
 msgstr ""
 
-#: app/templates/dashboard/index.html:32
+#: app/templates/dashboard/index.html:23
 msgid "Completed"
 msgstr ""
 
-#: app/templates/dashboard/index.html:44
+#: app/templates/dashboard/index.html:35
 msgid "Pending"
 msgstr ""
 
-#: app/templates/dashboard/index.html:53
+#: app/templates/dashboard/index.html:44
 msgid "Monthly Transaction Summary (Last 6 Months)"
 msgstr ""
 
-#: app/templates/dashboard/index.html:60
+#: app/templates/dashboard/index.html:51
 msgid "Month-over-Month Trend"
 msgstr ""
 
-#: app/templates/dashboard/index.html:69
+#: app/templates/dashboard/index.html:60
 msgid "Recent Transactions"
 msgstr ""
 
-#: app/templates/dashboard/index.html:71
+#: app/templates/dashboard/index.html:62
 msgid "Refresh"
 msgstr ""
 
-#: app/templates/dashboard/index.html:79
-#: app/templates/information/customer_lookup.html:45
-msgid "ID Pelanggan"
-msgstr ""
-
-#: app/templates/dashboard/index.html:80
-#: app/templates/information/customer_lookup.html:59
+#: app/templates/dashboard/index.html:71
 msgid "Periode"
 msgstr ""
 
-#: app/templates/dashboard/index.html:81
-#: app/templates/information/customer_lookup.html:60
+#: app/templates/dashboard/index.html:72
 msgid "Jumlah"
 msgstr ""
 
-#: app/templates/dashboard/index.html:82
-#: app/templates/information/customer_lookup.html:62
-#: app/templates/master_data/coordinators.html:39
-#: app/templates/master_data/officers.html:40
-#: app/templates/master_data/reset_umt.html:81
-msgid "Status"
-msgstr ""
-
-#: app/templates/dashboard/index.html:83
+#: app/templates/dashboard/index.html:74
 msgid "Petugas"
 msgstr ""
 
-#: app/templates/dashboard/index.html:121
+#: app/templates/dashboard/index.html:112
 msgid "Number of Transactions"
 msgstr ""
 
-#: app/templates/dashboard/index.html:146
+#: app/templates/dashboard/index.html:137
 msgid "Total Amount (Rp)"
 msgstr ""
 
-#: app/templates/information/customer_lookup.html:3
-#: app/templates/information/customer_lookup.html:15
-#: app/templates/information/customer_lookup.html:20
+#: app/templates/errors/403.html:3
+msgid "403 Forbidden - PLN Application"
+msgstr ""
+
+#: app/templates/errors/403.html:5
+msgid "403 Error"
+msgstr ""
+
+#: app/templates/errors/403.html:11
+msgid "403 - Forbidden"
+msgstr ""
+
+#: app/templates/errors/403.html:12
+msgid "You don't have permission to access this resource"
+msgstr ""
+
+#: app/templates/errors/403.html:13
+msgid "Go to Dashboard"
+msgstr ""
+
+#: app/templates/errors/404.html:3
+msgid "404 Not Found - PLN Application"
+msgstr ""
+
+#: app/templates/errors/404.html:5
+msgid "404 Error"
+msgstr ""
+
+#: app/templates/errors/404.html:11
+msgid "404 - Page Not Found"
+msgstr ""
+
+#: app/templates/errors/404.html:12
+msgid "The page you are looking for doesn't exist"
+msgstr ""
+
+#: app/templates/errors/500.html:3
+msgid "500 Internal Server Error - PLN Application"
+msgstr ""
+
+#: app/templates/errors/500.html:5
+msgid "500 Error"
+msgstr ""
+
+#: app/templates/errors/500.html:11
+msgid "500 - Internal Server Error"
+msgstr ""
+
+#: app/templates/errors/500.html:12
+msgid "Something went wrong on our end. Please try again later."
+msgstr ""
+
+#: app/templates/information/customer_lookup.html:5
 msgid "Customer Lookup"
 msgstr ""
 
-#: app/templates/information/customer_lookup.html:24
-#: app/templates/information/index.html:20
+#: app/templates/information/customer_lookup.html:17
 msgid "Customer Information Lookup"
 msgstr ""
 
-#: app/templates/information/customer_lookup.html:25
+#: app/templates/information/customer_lookup.html:18
 msgid "Search for customer details by ID Pelanggan"
 msgstr ""
 
-#: app/templates/information/customer_lookup.html:31
+#: app/templates/information/customer_lookup.html:24
 msgid "Enter ID Pelanggan"
 msgstr ""
 
-#: app/templates/information/customer_lookup.html:34
+#: app/templates/information/customer_lookup.html:27
 msgid "Search"
 msgstr ""
 
-#: app/templates/information/customer_lookup.html:42
+#: app/templates/information/customer_lookup.html:35
 msgid "Customer Information"
 msgstr ""
 
-#: app/templates/information/customer_lookup.html:49
+#: app/templates/information/customer_lookup.html:42
 msgid "Assigned Officer"
 msgstr ""
 
-#: app/templates/information/customer_lookup.html:54
+#: app/templates/information/customer_lookup.html:47
 msgid "Transaction History"
 msgstr ""
 
-#: app/templates/information/customer_lookup.html:61
+#: app/templates/information/customer_lookup.html:54
 msgid "Tipe Pembayaran"
 msgstr ""
 
-#: app/templates/information/customer_lookup.html:63
-#: app/templates/master_data/coordinators.html:40
+#: app/templates/information/customer_lookup.html:56
 msgid "Created At"
 msgstr ""
 
-#: app/templates/information/customer_lookup.html:94
+#: app/templates/information/customer_lookup.html:87
 msgid "No transactions found"
 msgstr ""
 
-#: app/templates/information/customer_lookup.html:95
+#: app/templates/information/customer_lookup.html:88
 msgid "No transaction history available for this customer."
 msgstr ""
 
-#: app/templates/information/index.html:10
+#: app/templates/information/index.html:5
 msgid "Access customer and system information"
 msgstr ""
 
-#: app/templates/information/index.html:21
+#: app/templates/information/index.html:16
 msgid "Search for customer details"
 msgstr ""
 
-#: app/templates/master_data/coordinators.html:3
-#: app/templates/master_data/coordinators.html:15
-#: app/templates/master_data/coordinators.html:20
-#: app/templates/master_data/coordinators.html:25
-#: app/templates/master_data/index.html:20
+#: app/templates/master_data/add_coordinator.html:5
+msgid "Add Coordinator"
+msgstr ""
+
+#: app/templates/master_data/add_coordinator.html:21
+msgid "Add New Coordinator"
+msgstr ""
+
+#: app/templates/master_data/add_coordinator.html:40
+msgid "Select Area"
+msgstr ""
+
+#: app/templates/master_data/coordinators.html:5
 msgid "Coordinators"
 msgstr ""
 
-#: app/templates/master_data/coordinators.html:27
-msgid "Add Coordinator"
+#: app/templates/master_data/coordinators.html:22
+msgid "All Areas"
 msgstr ""
 
 #: app/templates/master_data/coordinators.html:38
 msgid "Area"
 msgstr ""
 
-#: app/templates/master_data/coordinators.html:41
-#: app/templates/master_data/officers.html:42
-msgid "Actions"
-msgstr ""
-
-#: app/templates/master_data/coordinators.html:56
-#: app/templates/master_data/officers.html:58
+#: app/templates/master_data/coordinators.html:50
 msgid "Active"
 msgstr ""
 
-#: app/templates/master_data/coordinators.html:56
-#: app/templates/master_data/officers.html:58
+#: app/templates/master_data/coordinators.html:50
 msgid "Inactive"
 msgstr ""
 
-#: app/templates/master_data/coordinators.html:63
-#: app/templates/master_data/officers.html:75
-msgid "Edit"
+#: app/templates/master_data/coordinators.html:60
+msgid "Are you sure you want to delete this coordinator?"
 msgstr ""
 
-#: app/templates/master_data/coordinators.html:66
-msgid "Delete"
+#: app/templates/master_data/coordinators.html:69
+msgid "No coordinators found"
 msgstr ""
 
-#: app/templates/master_data/index.html:10
+#: app/templates/master_data/coordinators.html:70
+msgid "There are no coordinators to display at this time."
+msgstr ""
+
+#: app/templates/master_data/edit_coordinator.html:5
+msgid "Edit Coordinator"
+msgstr ""
+
+#: app/templates/master_data/edit_coordinator.html:21
+msgid "New Password (Optional)"
+msgstr ""
+
+#: app/templates/master_data/edit_coordinator.html:22
+msgid "Leave blank to keep current password"
+msgstr ""
+
+#: app/templates/master_data/edit_coordinator.html:48
+msgid "Update Coordinator"
+msgstr ""
+
+#: app/templates/master_data/index.html:5
 msgid "Manage system master data"
 msgstr ""
 
-#: app/templates/master_data/index.html:21
+#: app/templates/master_data/index.html:16
 msgid "Manage coordinators"
 msgstr ""
 
-#: app/templates/master_data/index.html:32
-#: app/templates/master_data/officers.html:3
-#: app/templates/master_data/officers.html:15
-#: app/templates/master_data/officers.html:20
-#: app/templates/master_data/officers.html:25
+#: app/templates/master_data/index.html:27
 msgid "Officers"
 msgstr ""
 
-#: app/templates/master_data/index.html:33
+#: app/templates/master_data/index.html:28
 msgid "Manage field officers"
 msgstr ""
 
-#: app/templates/master_data/index.html:44
-#: app/templates/master_data/reset_umt.html:3
-#: app/templates/master_data/reset_umt.html:15
-#: app/templates/master_data/reset_umt.html:20
+#: app/templates/master_data/index.html:39
 msgid "Reset UMT"
 msgstr ""
 
-#: app/templates/master_data/index.html:45
+#: app/templates/master_data/index.html:40
 msgid "Reset UMT updates"
 msgstr ""
 
-#: app/templates/master_data/officers.html:27
+#: app/templates/master_data/officers.html:22
 msgid "Add Officer"
 msgstr ""
 
-#: app/templates/master_data/officers.html:38
+#: app/templates/master_data/officers.html:33
 msgid "RBM Code"
 msgstr ""
 
-#: app/templates/master_data/officers.html:39
+#: app/templates/master_data/officers.html:34
 msgid "Coordinator"
 msgstr ""
 
-#: app/templates/master_data/officers.html:41
+#: app/templates/master_data/officers.html:36
 msgid "IMEI"
 msgstr ""
 
-#: app/templates/master_data/officers.html:62
+#: app/templates/master_data/officers.html:57
 msgid "Not Set"
 msgstr ""
 
-#: app/templates/master_data/officers.html:66
+#: app/templates/master_data/officers.html:61
 msgid "Toggle Active"
 msgstr ""
 
-#: app/templates/master_data/officers.html:70
+#: app/templates/master_data/officers.html:65
 msgid "Are you sure you want to reset the IMEI?"
 msgstr ""
 
-#: app/templates/master_data/officers.html:71
+#: app/templates/master_data/officers.html:66
 msgid "Reset IMEI"
 msgstr ""
 
-#: app/templates/master_data/reset_umt.html:24
+#: app/templates/master_data/reset_umt.html:5
 msgid "Reset UMT Updates"
 msgstr ""
 
-#: app/templates/master_data/reset_umt.html:25
+#: app/templates/master_data/reset_umt.html:6
 msgid "Perform UMT update reset operations"
 msgstr ""
 
-#: app/templates/master_data/reset_umt.html:31
+#: app/templates/master_data/reset_umt.html:12
 msgid "Reset Options"
 msgstr ""
 
-#: app/templates/master_data/reset_umt.html:36
-msgid "Reset all UMT data"
+#: app/templates/master_data/reset_umt.html:17
+msgid "Reset User IMEI Data"
 msgstr ""
 
-#: app/templates/master_data/reset_umt.html:42
-msgid "Reset UMT configurations"
+#: app/templates/master_data/reset_umt.html:23
+msgid "Reset Transaction Data"
 msgstr ""
 
-#: app/templates/master_data/reset_umt.html:48
-msgid "Clear UMT logs"
+#: app/templates/master_data/reset_umt.html:29
+msgid "Reset Talangan Data"
 msgstr ""
 
-#: app/templates/master_data/reset_umt.html:59
+#: app/templates/master_data/reset_umt.html:38
 msgid ""
-"Resetting UMT updates will clear all temporary data and configurations. "
-"This action cannot be undone. Please confirm before proceeding."
+"Resetting UMT updates will clear all selected data. This action cannot be "
+"undone. Please confirm before proceeding."
 msgstr ""
 
-#: app/templates/master_data/reset_umt.html:67
+#: app/templates/master_data/reset_umt.html:46
+msgid "Are you sure you want to proceed with the reset? This action cannot be undone."
+msgstr ""
+
+#: app/templates/master_data/reset_umt.html:47
 msgid "Perform Reset"
 msgstr ""
 
-#: app/templates/master_data/reset_umt.html:73
+#: app/templates/master_data/reset_umt.html:53
 msgid "Reset History"
 msgstr ""
 
-#: app/templates/master_data/reset_umt.html:78
-msgid "Date"
-msgstr ""
-
-#: app/templates/master_data/reset_umt.html:79
-msgid "User"
-msgstr ""
-
-#: app/templates/master_data/reset_umt.html:80
+#: app/templates/master_data/reset_umt.html:62
 msgid "Action"
 msgstr ""
 
-#: app/templates/master_data/reset_umt.html:86
+#: app/templates/master_data/reset_umt.html:68
 msgid "No reset history available"
 msgstr ""
 
-#: app/templates/reports/index.html:10
-msgid "View and analyze system reports and monitoring data"
+#: app/templates/reports/area.html:5
+msgid "Rekap per Area - Reports"
 msgstr ""
 
-#: app/templates/reports/index.html:20
-msgid "Rekap per RBM"
-msgstr ""
-
-#: app/templates/reports/index.html:21
-msgid "Report by RBM code"
-msgstr ""
-
-#: app/templates/reports/index.html:32
-msgid "Rekap per Coordinator"
-msgstr ""
-
-#: app/templates/reports/index.html:33
-msgid "Report by coordinator"
-msgstr ""
-
-#: app/templates/reports/index.html:44
-msgid "Rekap per Officer"
-msgstr ""
-
-#: app/templates/reports/index.html:45
-msgid "Report by field officer"
-msgstr ""
-
-#: app/templates/reports/index.html:56
+#: app/templates/reports/area.html:15
+#: app/templates/reports/index.html:51
 msgid "Rekap per Area"
 msgstr ""
 
-#: app/templates/reports/index.html:57
+#: app/templates/reports/area.html:22
+msgid "Excel"
+msgstr ""
+
+#: app/templates/reports/area.html:25
+msgid "PDF"
+msgstr ""
+
+#: app/templates/reports/area.html:34
+msgid "Transaction Count"
+msgstr ""
+
+#: app/templates/reports/area.html:35
+msgid "Total Amount"
+msgstr ""
+
+#: app/templates/reports/area.html:52
+msgid "No data available"
+msgstr ""
+
+#: app/templates/reports/area.html:53
+msgid "There are no area reports to display at this time."
+msgstr ""
+
+#: app/templates/reports/bluetooth_print.html:5
+msgid "Bluetooth Print - Reports"
+msgstr ""
+
+#: app/templates/reports/bluetooth_print.html:15
+#: app/templates/reports/index.html:105
+msgid "Bluetooth Print"
+msgstr ""
+
+#: app/templates/reports/bluetooth_print.html:21
+msgid "Bluetooth Print Logs"
+msgstr ""
+
+#: app/templates/reports/bluetooth_print.html:31
+msgid "Transaction ID"
+msgstr ""
+
+#: app/templates/reports/bluetooth_print.html:32
+msgid "Printed By"
+msgstr ""
+
+#: app/templates/reports/bluetooth_print.html:33
+msgid "File Path"
+msgstr ""
+
+#: app/templates/reports/bluetooth_print.html:34
+msgid "Printed At"
+msgstr ""
+
+#: app/templates/reports/bluetooth_print.html:52
+msgid "No print logs available"
+msgstr ""
+
+#: app/templates/reports/bluetooth_print.html:53
+msgid "There are no bluetooth print logs to display at this time."
+msgstr ""
+
+#: app/templates/reports/coordinator.html:5
+msgid "Rekap per Coordinator - Reports"
+msgstr ""
+
+#: app/templates/reports/coordinator.html:15
+#: app/templates/reports/index.html:27
+msgid "Rekap per Coordinator"
+msgstr ""
+
+#: app/templates/reports/index.html:5
+msgid "View and analyze system reports and monitoring data"
+msgstr ""
+
+#: app/templates/reports/index.html:15
+msgid "Rekap per RBM"
+msgstr ""
+
+#: app/templates/reports/index.html:16
+msgid "Report by RBM code"
+msgstr ""
+
+#: app/templates/reports/index.html:28
+msgid "Report by coordinator"
+msgstr ""
+
+#: app/templates/reports/index.html:39
+msgid "Rekap per Officer"
+msgstr ""
+
+#: app/templates/reports/index.html:40
+msgid "Report by field officer"
+msgstr ""
+
+#: app/templates/reports/index.html:52
 msgid "Report by area"
 msgstr ""
 
-#: app/templates/reports/index.html:68
+#: app/templates/reports/index.html:63
 msgid "Rekap Tunggakan"
 msgstr ""
 
-#: app/templates/reports/index.html:69
+#: app/templates/reports/index.html:64
 msgid "Outstanding payments report"
 msgstr ""
 
-#: app/templates/reports/index.html:80
+#: app/templates/reports/index.html:75
 msgid "WA Sending Monitoring"
 msgstr ""
 
-#: app/templates/reports/index.html:81
+#: app/templates/reports/index.html:76
 msgid "WhatsApp communication logs"
 msgstr ""
 
-#: app/templates/reports/index.html:92
+#: app/templates/reports/index.html:87
 msgid "Log Monitoring"
 msgstr ""
 
-#: app/templates/reports/index.html:93
+#: app/templates/reports/index.html:88
 msgid "System monitoring logs"
 msgstr ""
 
-#: app/templates/reports/index.html:104
+#: app/templates/reports/index.html:99
 msgid "Daily Settlement Monitoring"
 msgstr ""
 
-#: app/templates/reports/index.html:105
+#: app/templates/reports/index.html:100
 msgid "Daily settlement reports"
 msgstr ""
 
-#: app/templates/reports/index.html:116
+#: app/templates/reports/index.html:111
 msgid "Bluetooth Print Monitoring"
 msgstr ""
 
-#: app/templates/reports/index.html:117
+#: app/templates/reports/index.html:112
 msgid "Print log monitoring"
 msgstr ""
 
-#: app/templates/talangan/index.html:9
+#: app/templates/reports/log_monitoring.html:5
+msgid "Log Monitoring - Reports"
+msgstr ""
+
+#: app/templates/reports/log_monitoring.html:21
+msgid "System Monitoring Logs"
+msgstr ""
+
+#: app/templates/reports/log_monitoring.html:30
+msgid "Module Name"
+msgstr ""
+
+#: app/templates/reports/log_monitoring.html:31
+msgid "Event Type"
+msgstr ""
+
+#: app/templates/reports/log_monitoring.html:32
+msgid "Details"
+msgstr ""
+
+#: app/templates/reports/log_monitoring.html:33
+msgid "User"
+msgstr ""
+
+#: app/templates/reports/log_monitoring.html:53
+msgid "No monitoring logs available"
+msgstr ""
+
+#: app/templates/reports/log_monitoring.html:54
+msgid "There are no monitoring logs to display at this time."
+msgstr ""
+
+#: app/templates/reports/officer.html:5
+msgid "Rekap per Officer - Reports"
+msgstr ""
+
+#: app/templates/reports/rbm.html:5
+msgid "Rekap per RBM - Reports"
+msgstr ""
+
+#: app/templates/reports/tunggakan.html:5
+msgid "Rekap Tunggakan - Reports"
+msgstr ""
+
+#: app/templates/reports/tunggakan.html:15
+msgid "Rekap Tunggakan"
+msgstr ""
+
+#: app/templates/reports/tunggakan.html:21
+msgid "Rekap Tunggakan (Outstanding Payments)"
+msgstr ""
+
+#: app/templates/reports/wa_monitoring.html:5
+msgid "WA Monitoring - Reports"
+msgstr ""
+
+#: app/templates/reports/wa_monitoring.html:15
+msgid "WA Monitoring"
+msgstr ""
+
+#: app/templates/reports/wa_monitoring.html:21
+msgid "WhatsApp Monitoring"
+msgstr ""
+
+#: app/templates/reports/wa_monitoring.html:32
+msgid "Message"
+msgstr ""
+
+#: app/templates/reports/wa_monitoring.html:34
+msgid "Sent At"
+msgstr ""
+
+#: app/templates/reports/wa_monitoring.html:35
+msgid "Delivered At"
+msgstr ""
+
+#: app/templates/reports/wa_monitoring.html:36
+msgid "Read At"
+msgstr ""
+
+#: app/templates/reports/wa_monitoring.html:59
+msgid "No WhatsApp logs available"
+msgstr ""
+
+#: app/templates/reports/wa_monitoring.html:60
+msgid "There are no WhatsApp logs to display at this time."
+msgstr ""
+
+#: app/templates/talangan/add_transaction.html:5
+msgid "Add Talangan Transaction"
+msgstr ""
+
+#: app/templates/talangan/add_transaction.html:17
+msgid "Add Transaction"
+msgstr ""
+
+#: app/templates/talangan/add_transaction.html:38
+msgid "Select Officer"
+msgstr ""
+
+#: app/templates/talangan/approval.html:5
+msgid "Approval - Talangan"
+msgstr ""
+
+#: app/templates/talangan/approval.html:15
+msgid "Approval"
+msgstr ""
+
+#: app/templates/talangan/approval.html:21
+msgid "Talangan Approval"
+msgstr ""
+
+#: app/templates/talangan/approval.html:43
+msgid "Approved"
+msgstr ""
+
+#: app/templates/talangan/approval.html:55
+msgid "Rejected"
+msgstr ""
+
+#: app/templates/talangan/approval.html:64
+msgid "Pending Approval"
+msgstr ""
+
+#: app/templates/talangan/approval.html:91
+msgid "No approval data available"
+msgstr ""
+
+#: app/templates/talangan/approval.html:92
+msgid "There are no talangan approval requests to display at this time."
+msgstr ""
+
+#: app/templates/talangan/balance.html:5
+msgid "Balance - Talangan"
+msgstr ""
+
+#: app/templates/talangan/balance.html:15
+msgid "Balance"
+msgstr ""
+
+#: app/templates/talangan/balance.html:21
+msgid "Talangan Balance"
+msgstr ""
+
+#: app/templates/talangan/balance.html:31
+msgid "Total Balance"
+msgstr ""
+
+#: app/templates/talangan/balance.html:69
+msgid "Balance by Officer"
+msgstr ""
+
+#: app/templates/talangan/balance.html:76
+msgid "Rejected"
+msgstr ""
+
+#: app/templates/talangan/balance.html:86
+msgid "No balance data available"
+msgstr ""
+
+#: app/templates/talangan/balance.html:87
+msgid "There is no balance data to display at this time."
+msgstr ""
+
+#: app/templates/talangan/daily_target.html:5
+msgid "Daily Target - Talangan"
+msgstr ""
+
+#: app/templates/talangan/daily_target.html:21
+msgid "Daily Target Monitoring"
+msgstr ""
+
+#: app/templates/talangan/daily_target.html:31
+msgid "Today's Target"
+msgstr ""
+
+#: app/templates/talangan/daily_target.html:43
+msgid "Achieved"
+msgstr ""
+
+#: app/templates/talangan/daily_target.html:55
+msgid "Progress"
+msgstr ""
+
+#: app/templates/talangan/daily_target.html:67
+msgid "Remaining"
+msgstr ""
+
+#: app/templates/talangan/daily_target.html:76
+msgid "Target vs Achievement"
+msgstr ""
+
+#: app/templates/talangan/daily_target.html:83
+msgid "No chart data available"
+msgstr ""
+
+#: app/templates/talangan/daily_target.html:90
+msgid "Daily Target by Officer"
+msgstr ""
+
+#: app/templates/talangan/daily_target.html:97
+msgid "Target"
+msgstr ""
+
+#: app/templates/talangan/daily_target.html:110
+msgid "No daily target data available"
+msgstr ""
+
+#: app/templates/talangan/daily_target.html:111
+msgid "There is no daily target data to display at this time."
+msgstr ""
+
+#: app/templates/talangan/detail_payments.html:5
+msgid "Detail Payments - Talangan"
+msgstr ""
+
+#: app/templates/talangan/detail_payments.html:31
+msgid "Cash Payments"
+msgstr ""
+
+#: app/templates/talangan/detail_payments.html:43
+msgid "Installment Payments"
+msgstr ""
+
+#: app/templates/talangan/detail_payments.html:55
+msgid "Transfer Payments"
+msgstr ""
+
+#: app/templates/talangan/detail_payments.html:64
+msgid "Payment Details"
+msgstr ""
+
+#: app/templates/talangan/detail_payments.html:72
+msgid "Payment Type"
+msgstr ""
+
+#: app/templates/talangan/detail_payments.html:85
+msgid "No payment details available"
+msgstr ""
+
+#: app/templates/talangan/detail_payments.html:86
+msgid "There are no payment details to display at this time."
+msgstr ""
+
+#: app/templates/talangan/edit_transaction.html:5
+msgid "Edit Talangan Transaction"
+msgstr ""
+
+#: app/templates/talangan/edit_transaction.html:17
+msgid "Edit Transaction"
+msgstr ""
+
+#: app/templates/talangan/edit_transaction.html:67
+msgid "Update Transaction"
+msgstr ""
+
+#: app/templates/talangan/index.html:5
 msgid "Talangan (Advance Fund)"
 msgstr ""
 
-#: app/templates/talangan/index.html:10
+#: app/templates/talangan/index.html:6
 msgid "Manage advance fund operations"
 msgstr ""
 
-#: app/templates/talangan/index.html:20
+#: app/templates/talangan/index.html:16
 msgid "Balance Monitoring"
 msgstr ""
 
-#: app/templates/talangan/index.html:21
+#: app/templates/talangan/index.html:17
 msgid "Monitor talangan balance"
 msgstr ""
 
-#: app/templates/talangan/index.html:32
+#: app/templates/talangan/index.html:28
 msgid "Daily Target"
 msgstr ""
 
-#: app/templates/talangan/index.html:33
+#: app/templates/talangan/index.html:29
 msgid "Monitor daily targets"
 msgstr ""
 
-#: app/templates/talangan/index.html:44
+#: app/templates/talangan/index.html:40
 msgid "Daily Transaction Totals"
 msgstr ""
 
-#: app/templates/talangan/index.html:45
+#: app/templates/talangan/index.html:41
 msgid "View daily transactions"
 msgstr ""
 
-#: app/templates/talangan/index.html:56
+#: app/templates/talangan/index.html:52
 msgid "Detail Payments"
 msgstr ""
 
-#: app/templates/talangan/index.html:57
+#: app/templates/talangan/index.html:53
 msgid "Cash/installment details"
 msgstr ""
 
-#: app/templates/talangan/index.html:68
+#: app/templates/talangan/index.html:64
 msgid "Input Settlement"
 msgstr ""
 
-#: app/templates/talangan/index.html:69
+#: app/templates/talangan/index.html:65
 msgid "Input settlement data"
 msgstr ""
 
-#: app/templates/talangan/index.html:80
+#: app/templates/talangan/index.html:76
 msgid "Approval Process"
 msgstr ""
 
-#: app/templates/talangan/index.html:81
+#: app/templates/talangan/index.html:77
 msgid "Manage approvals"
 msgstr ""
 
+#: app/templates/talangan/input_settlement.html:5
+msgid "Input Settlement - Talangan"
+msgstr ""
+
+#: app/templates/talangan/input_settlement.html:25
+msgid "Settlement Date"
+msgstr ""
+
+#: app/templates/talangan/input_settlement.html:45
+msgid "Submit Settlement"
+msgstr ""
+
+#: app/templates/talangan/input_settlement.html:52
+msgid "Recent Settlements"
+msgstr ""
+
+#: app/templates/talangan/input_settlement.html:71
+msgid "No settlement data available"
+msgstr ""
+
+#: app/templates/talangan/input_settlement.html:72
+msgid "There are no settlement records to display at this time."
+msgstr ""
+
+#: app/templates/talangan/transactions.html:5
+msgid "Talangan Transactions - Talangan"
+msgstr ""
+
+#: app/templates/talangan/transactions.html:15
+msgid "Talangan Transactions"
+msgstr ""
+
+#: app/templates/talangan/transactions.html:67
+msgid "Are you sure you want to delete this transaction?"
+msgstr ""
+
+#: app/templates/talangan/transactions.html:77
+msgid "No talangan transactions available"
+msgstr ""
+
+#: app/templates/talangan/transactions.html:78
+msgid "There are no talangan transactions to display at this time."
+msgstr ""

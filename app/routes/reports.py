@@ -206,6 +206,37 @@ def officer_export(format):
         flash('Invalid export format', 'error')
         return redirect(url_for('reports.officer'))
 
+@reports_bp.route('/area/export/<format>')
+@login_required
+def area_export(format):
+    area_data = db.session.query(
+        Area.name,
+        func.count(Transaction.id).label('count'),
+        func.sum(Transaction.total).label('total')
+    ).select_from(Area).join(User, Area.code == User.area_code).join(Officer, User.id == Officer.user_id).join(Transaction, Officer.id == Transaction.officer_id).group_by(Area.code).all()
+
+    if format == 'excel':
+        headers = ['name', 'count', 'total']
+        output, filename = export_to_excel(area_data, headers, 'area_report')
+        return send_file(
+            output,
+            mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            as_attachment=True,
+            download_name=filename
+        )
+    elif format == 'pdf':
+        headers = ['Area', 'Count', 'Total']
+        output, filename = export_to_pdf(area_data, headers, 'area_report', 'Area Report')
+        return send_file(
+            output,
+            mimetype='application/pdf',
+            as_attachment=True,
+            download_name=filename
+        )
+    else:
+        flash('Invalid export format', 'error')
+        return redirect(url_for('reports.area'))
+
 @reports_bp.route('/tunggakan/export/<format>')
 @login_required
 def tunggakan_export(format):

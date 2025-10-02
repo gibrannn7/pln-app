@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Add Officer') }} - {{ _('Master Data') }}{% endblock %}
+
+{% block content %}
+<div class="mb-6">
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">{{ _('Add New Officer') }}</h1>
+</div>
+
+<div class="max-w-2xl mx-auto">
+    <form method="POST" action="{{ url_for('master_data.add_officer') }}" class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6">
+        <div class="grid grid-cols-1 gap-6">
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ _('Username') }}</label>
+                <input type="text" id="username" name="username" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+            </div>
+            
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ _('Password') }}</label>
+                <input type="password" id="password" name="password" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+            </div>
+            
+            <div>
+                <label for="area_code" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ _('Area') }}</label>
+                <select id="area_code" name="area_code" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                    <option value="">{{ _('Select Area') }}</option>
+                    {% for area in areas %}
+                    <option value="{{ area.code }}">{{ area.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label for="rbm_code" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ _('RBM Code') }}</label>
+                <input type="text" id="rbm_code" name="rbm_code" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+            </div>
+
+            <div>
+                <label for="coordinator_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ _('Coordinator') }}</label>
+                <select id="coordinator_id" name="coordinator_id" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                    <option value="">{{ _('Select Coordinator') }}</option>
+                    {% for coordinator in coordinators %}
+                    <option value="{{ coordinator.id }}">{{ coordinator.username }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        
+        <div class="mt-6 flex justify-end space-x-3">
+            <a href="{{ url_for('master_data.officers') }}" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                {{ _('Cancel') }}
+            </a>
+            <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
+                {{ _('Add Officer') }}
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

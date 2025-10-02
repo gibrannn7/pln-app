@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from flask_login import login_required
+from flask_login import login_required, current_user
 from flask_babel import _
 from app.models import User, Area, Officer
 from app import db
@@ -70,6 +70,7 @@ def edit_coordinator(id):
         username = request.form.get('username')
         new_password = request.form.get('password')
         area_code = request.form.get('area_code')
+        active = 'active' in request.form
         
         # Check if username already exists (excluding current user)
         existing_user = User.query.filter(User.username == username, User.id != id).first()
@@ -79,6 +80,7 @@ def edit_coordinator(id):
         
         coordinator.username = username
         coordinator.area_code = area_code
+        coordinator.active = active
         
         if new_password:  # Only update password if provided
             coordinator.set_password(new_password)
@@ -119,6 +121,76 @@ def delete_coordinator(id):
 def officers():
     officers = Officer.query.join(User, Officer.user_id == User.id).all()
     return render_template('master_data/officers.html', officers=officers)
+    
+@master_data_bp.route('/officers/add', methods=['GET', 'POST'])
+@login_required
+@admin_required
+def add_officer():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        area_code = request.form.get('area_code')
+        rbm_code = request.form.get('rbm_code')
+        coordinator_id = request.form.get('coordinator_id')
+
+        # Check if username already exists
+        existing_user = User.query.filter_by(username=username).first()
+        if existing_user:
+            flash(_('Username already exists'), 'error')
+            return redirect(url_for('master_data.add_officer'))
+
+        # Create new user for the officer
+        user = User(
+            username=username,
+            role='field_officer',
+            area_code=area_code
+        )
+        user.set_password(password)
+        db.session.add(user)
+        db.session.commit()
+
+        # Create new officer
+        officer = Officer(
+            user_id=user.id,
+            rbm_code=rbm_code,
+            coordinator_id=coordinator_id if coordinator_id else None
+        )
+        db.session.add(officer)
+        db.session.commit()
+        flash(_('Officer added successfully'), 'success')
+        return redirect(url_for('master_data.officers'))
+
+    areas = Area.query.all()
+    coordinators = User.query.filter_by(role='coordinator').all()
+    return render_template('master_data/add_officer.html', areas=areas, coordinators=coordinators)
+
+
+@master_data_bp.route('/officers/edit/<int:id>', methods=['GET', 'POST'])
+@login_required
+@admin_required
+def edit_officer(id):
+    officer = Officer.query.get_or_404(id)
+    if request.method == 'POST':
+        # Update user data
+        officer.user.username = request.form.get('username')
+        officer.user.area_code = request.form.get('area_code')
+        new_password = request.form.get('password')
+        if new_password:
+            officer.user.set_password(new_password)
+
+        # Update officer data
+        officer.rbm_code = request.form.get('rbm_code')
+        coordinator_id = request.form.get('coordinator_id')
+        officer.coordinator_id = coordinator_id if coordinator_id else None
+        officer.active = 'active' in request.form
+
+        db.session.commit()
+        flash(_('Officer updated successfully'), 'success')
+        return redirect(url_for('master_data.officers'))
+
+    areas = Area.query.all()
+    coordinators = User.query.filter_by(role='coordinator').all()
+    return render_template('master_data/edit_officer.html', officer=officer, areas=areas, coordinators=coordinators)
 
 @master_data_bp.route('/officers/toggle/<int:officer_id>', methods=['POST'])
 @login_required

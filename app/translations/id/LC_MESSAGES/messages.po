@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-10-01 21:03+0700\n"
-"PO-Revision-Date: 2025-10-01 21:10+0700\n"
+"POT-Creation-Date: 2025-10-02 10:00+0000\n"
+"PO-Revision-Date: 2025-10-02 10:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: id\n"
 "Language-Team: id <LL@li.org>\n"
@@ -18,620 +18,951 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: app/routes/auth.py:37
-msgid "Captcha verification failed. Please try again."
-msgstr "Verifikasi captcha gagal. Silakan coba lagi."
+msgid "Invalid captcha. Please try again."
+msgstr "Captcha tidak valid. Silakan coba lagi."
 
-#: app/routes/auth.py:59
-msgid "Invalid username or password"
+msgid "Invalid username or password."
 msgstr "Nama pengguna atau kata sandi tidak valid."
 
-#: app/routes/auth.py:72
 msgid "You have been logged out."
 msgstr "Anda telah keluar."
 
-#: app/routes/auth.py:85
 msgid "Current password is incorrect"
 msgstr "Kata sandi saat ini salah."
 
-#: app/routes/auth.py:90
 msgid "New passwords do not match"
 msgstr "Kata sandi baru tidak cocok."
 
-#: app/routes/auth.py:97
 msgid "Password updated successfully"
 msgstr "Kata sandi berhasil diperbarui."
 
-#: app/routes/main.py:25
 msgid "Bahasa diubah menjadi Indonesia"
 msgstr "Bahasa diubah menjadi Indonesia."
 
-#: app/routes/main.py:27
 msgid "Language changed to English"
 msgstr "Bahasa diubah menjadi Inggris."
 
-#: app/routes/master_data.py:36
-msgid "active"
-msgstr "aktif"
-
-#: app/routes/master_data.py:36
-msgid "inactive"
-msgstr "tidak aktif"
-
-#: app/routes/master_data.py:37
-#, python-format
 msgid "Officer status updated to %(status)s"
 msgstr "Status petugas diperbarui menjadi %(status)s"
 
-#: app/routes/master_data.py:49
 msgid "Officer IMEI reset successfully"
 msgstr "IMEI petugas berhasil direset."
 
-#: app/templates/anomaly/index.html:3 app/templates/auth/login.html:10
-#: app/templates/base.html:46 app/templates/dashboard/index.html:3
-#: app/templates/information/index.html:3
-#: app/templates/master_data/index.html:3 app/templates/reports/index.html:3
-#: app/templates/talangan/index.html:3
-msgid "PLN Application"
-msgstr "Aplikasi PLN"
+msgid "Invalid export format"
+msgstr "Format ekspor tidak valid"
 
-#: app/templates/base.html:80
-msgid "Navigation"
-msgstr "Navigasi"
+msgid "Report Anomaly - Anomaly"
+msgstr "Laporkan Anomali - Anomali"
 
-#: app/templates/base.html:85 app/templates/dashboard/index.html:3
-#: app/templates/dashboard/index.html:5 app/templates/dashboard/index.html:9
-msgid "Dashboard"
-msgstr "Dasbor"
+msgid "Report Anomaly"
+msgstr "Laporkan Anomali"
 
-#: app/templates/base.html:92 app/templates/master_data/coordinators.html:3
-#: app/templates/master_data/coordinators.html:9
-#: app/templates/master_data/index.html:3
-#: app/templates/master_data/index.html:5
-#: app/templates/master_data/index.html:9
-#: app/templates/master_data/officers.html:3
-#: app/templates/master_data/officers.html:9
-#: app/templates/master_data/reset_umt.html:3
-#: app/templates/master_data/reset_umt.html:9
-msgid "Master Data"
-msgstr "Data Induk"
+msgid "Report New Anomaly"
+msgstr "Laporkan Anomali Baru"
 
-#: app/templates/base.html:99 app/templates/reports/index.html:3
-#: app/templates/reports/index.html:5 app/templates/reports/index.html:9
-msgid "Reports & Monitoring"
-msgstr "Laporan & Monitoring"
-
-#: app/templates/base.html:105 app/templates/talangan/index.html:3
-#: app/templates/talangan/index.html:5
-msgid "Talangan"
-msgstr "Talangan"
-
-#: app/templates/base.html:111 app/templates/information/customer_lookup.html:3
-#: app/templates/information/customer_lookup.html:9
-#: app/templates/information/index.html:3
-#: app/templates/information/index.html:5
-#: app/templates/information/index.html:9
-#: app/templates/master_data/reset_umt.html:55
-msgid "Information"
-msgstr "Informasi"
-
-#: app/templates/anomaly/index.html:3 app/templates/anomaly/index.html:5
-#: app/templates/anomaly/index.html:9 app/templates/base.html:118
-msgid "HO Anomaly Module"
-msgstr "Modul Anomali HO"
-
-#: app/templates/base.html:125
-msgid "Settings"
-msgstr "Pengaturan"
-
-#: app/templates/base.html:131
-msgid "Logout"
-msgstr "Keluar"
-
-#: app/templates/base.html:146
-msgid "Home"
-msgstr "Beranda"
-
-#: app/templates/anomaly/index.html:10
-msgid "Manage and monitor anomalies"
-msgstr "Kelola dan pantau anomali"
-
-#: app/templates/anomaly/index.html:20
-msgid "Daily Anomaly Reports"
-msgstr "Laporan Anomali Harian"
-
-#: app/templates/anomaly/index.html:21
-msgid "View daily anomaly reports"
-msgstr "Lihat laporan anomali harian"
-
-#: app/templates/anomaly/index.html:32
-msgid "Recap per Officer"
-msgstr "Rekap per Petugas"
-
-#: app/templates/anomaly/index.html:33
-msgid "Anomalies by officer"
-msgstr "Anomali berdasarkan petugas"
-
-#: app/templates/anomaly/index.html:44
-msgid "Recap per Date"
-msgstr "Rekap per Tanggal"
-
-#: app/templates/anomaly/index.html:45
-msgid "Anomalies by date"
-msgstr "Anomali berdasarkan tanggal"
-
-#: app/templates/anomaly/index.html:56
-msgid "Anomaly Master Data"
-msgstr "Data Induk Anomali"
-
-#: app/templates/anomaly/index.html:57
-msgid "Manage anomaly types"
-msgstr "Kelola jenis anomali"
-
-#: app/templates/auth/change_password.html:3
-msgid "Change Password - PLN Application"
-msgstr "Ubah Kata Sandi - Aplikasi PLN"
-
-#: app/templates/auth/change_password.html:5
-#: app/templates/auth/change_password.html:9
-#: app/templates/auth/change_password.html:31
-msgid "Change Password"
-msgstr "Ubah Kata Sandi"
-
-#: app/templates/auth/change_password.html:13
-msgid "Current Password"
-msgstr "Kata Sandi Saat Ini"
-
-#: app/templates/auth/change_password.html:19
-msgid "New Password"
-msgstr "Kata Sandi Baru"
-
-#: app/templates/auth/change_password.html:25
-msgid "Confirm New Password"
-msgstr "Konfirmasi Kata Sandi Baru"
-
-#: app/templates/auth/login.html:3
-msgid "Login - PLN Application"
-msgstr "Masuk - Aplikasi PLN"
-
-#: app/templates/auth/login.html:12
-msgid "Login to your account"
-msgstr "Masuk ke akun Anda"
-
-#: app/templates/auth/login.html:24
-#: app/templates/master_data/coordinators.html:37
-#: app/templates/master_data/officers.html:37
-msgid "Username"
-msgstr "Nama Pengguna"
-
-#: app/templates/auth/login.html:39
-msgid "Password"
-msgstr "Kata Sandi"
-
-#: app/templates/auth/login.html:54
-msgid "Captcha"
-msgstr "Captcha"
-
-#: app/templates/auth/login.html:67
-msgid "Enter the answer"
-msgstr "Masukkan jawaban"
-
-#: app/templates/auth/login.html:75
-msgid "Login"
-msgstr "Masuk"
-
-#: app/templates/dashboard/index.html:10
-msgid "Welcome to your PLN Application dashboard"
-msgstr "Selamat datang di dasbor Aplikasi PLN Anda"
-
-#: app/templates/dashboard/index.html:20
-msgid "Total Transactions"
-msgstr "Total Transaksi"
-
-#: app/templates/dashboard/index.html:32
-msgid "Completed"
-msgstr "Selesai"
-
-#: app/templates/dashboard/index.html:44
-msgid "Pending"
-msgstr "Tertunda"
-
-#: app/templates/dashboard/index.html:53
-msgid "Monthly Transaction Summary (Last 6 Months)"
-msgstr "Ringkasan Transaksi Bulanan (6 Bulan Terakhir)"
-
-#: app/templates/dashboard/index.html:60
-msgid "Month-over-Month Trend"
-msgstr "Tren Bulan ke Bulan"
-
-#: app/templates/dashboard/index.html:69
-msgid "Recent Transactions"
-msgstr "Transaksi Terkini"
-
-#: app/templates/dashboard/index.html:71
-msgid "Refresh"
-msgstr "Segarkan"
-
-#: app/templates/dashboard/index.html:79
-#: app/templates/information/customer_lookup.html:45
 msgid "ID Pelanggan"
 msgstr "ID Pelanggan"
 
-#: app/templates/dashboard/index.html:80
-#: app/templates/information/customer_lookup.html:59
-msgid "Periode"
-msgstr "Periode"
+msgid "Anomaly Type"
+msgstr "Jenis Anomali"
 
-#: app/templates/dashboard/index.html:81
-#: app/templates/information/customer_lookup.html:60
-msgid "Jumlah"
-msgstr "Jumlah"
+msgid "Select Anomaly Type"
+msgstr "Pilih Jenis Anomali"
 
-#: app/templates/dashboard/index.html:82
-#: app/templates/information/customer_lookup.html:62
-#: app/templates/master_data/coordinators.html:39
-#: app/templates/master_data/officers.html:40
-#: app/templates/master_data/reset_umt.html:81
-msgid "Status"
-msgstr "Status"
+msgid "Meter Reading"
+msgstr "Pembacaan Meter"
 
-#: app/templates/dashboard/index.html:83
-msgid "Petugas"
-msgstr "Petugas"
+msgid "Payment"
+msgstr "Pembayaran"
 
-#: app/templates/dashboard/index.html:121
-msgid "Number of Transactions"
-msgstr "Jumlah Transaksi"
+msgid "Billing"
+msgstr "Penagihan"
 
-#: app/templates/dashboard/index.html:146
-msgid "Total Amount (Rp)"
-msgstr "Total Nominal (Rp)"
+msgid "Service Issue"
+msgstr "Masalah Layanan"
 
-#: app/templates/information/customer_lookup.html:3
-#: app/templates/information/customer_lookup.html:15
-#: app/templates/information/customer_lookup.html:20
-msgid "Customer Lookup"
-msgstr "Pencarian Pelanggan"
+msgid "Technical Problem"
+msgstr "Masalah Teknis"
 
-#: app/templates/information/customer_lookup.html:24
-#: app/templates/information/index.html:20
-msgid "Customer Information Lookup"
-msgstr "Pencarian Informasi Pelanggan"
+msgid "Customer Complaint"
+msgstr "Keluhan Pelanggan"
 
-#: app/templates/information/customer_lookup.html:25
-msgid "Search for customer details by ID Pelanggan"
-msgstr "Cari detail pelanggan berdasarkan ID Pelanggan"
+msgid "Other"
+msgstr "Lainnya"
 
-#: app/templates/information/customer_lookup.html:31
-msgid "Enter ID Pelanggan"
-msgstr "Masukkan ID Pelanggan"
+msgid "Description"
+msgstr "Deskripsi"
 
-#: app/templates/information/customer_lookup.html:34
-msgid "Search"
-msgstr "Cari"
+msgid "Cancel"
+msgstr "Batal"
 
-#: app/templates/information/customer_lookup.html:42
-msgid "Customer Information"
-msgstr "Informasi Pelanggan"
+msgid "Submit Report"
+msgstr "Kirim Laporan"
 
-#: app/templates/information/customer_lookup.html:49
-msgid "Assigned Officer"
-msgstr "Petugas yang Ditugaskan"
+msgid "Add Anomaly Master - Anomaly"
+msgstr "Tambah Master Anomali - Anomali"
 
-#: app/templates/information/customer_lookup.html:54
-msgid "Transaction History"
-msgstr "Riwayat Transaksi"
+msgid "Add Master Data"
+msgstr "Tambah Data Induk"
 
-#: app/templates/information/customer_lookup.html:61
-msgid "Tipe Pembayaran"
-msgstr "Tipe Pembayaran"
+msgid "Anomaly Master Data"
+msgstr "Data Induk Anomali"
 
-#: app/templates/information/customer_lookup.html:63
-#: app/templates/master_data/coordinators.html:40
-msgid "Created At"
-msgstr "Dibuat Pada"
+msgid "Code"
+msgstr "Kode"
 
-#: app/templates/information/customer_lookup.html:94
-msgid "No transactions found"
-msgstr "Tidak ada transaksi ditemukan"
+msgid "Category"
+msgstr "Kategori"
 
-#: app/templates/information/customer_lookup.html:95
-msgid "No transaction history available for this customer."
-msgstr "Tidak ada riwayat transaksi yang tersedia untuk pelanggan ini."
+msgid "Select Category"
+msgstr "Pilih Kategori"
 
-#: app/templates/information/index.html:10
-msgid "Access customer and system information"
-msgstr "Akses informasi pelanggan dan sistem"
-
-#: app/templates/information/index.html:21
-msgid "Search for customer details"
-msgstr "Cari detail pelanggan"
-
-#: app/templates/master_data/coordinators.html:3
-#: app/templates/master_data/coordinators.html:15
-#: app/templates/master_data/coordinators.html:20
-#: app/templates/master_data/coordinators.html:25
-#: app/templates/master_data/index.html:20
-msgid "Coordinators"
-msgstr "Koordinator"
-
-#: app/templates/master_data/coordinators.html:27
-msgid "Add Coordinator"
-msgstr "Tambah Koordinator"
-
-#: app/templates/master_data/coordinators.html:38
-msgid "Area"
-msgstr "Area"
-
-#: app/templates/master_data/coordinators.html:41
-#: app/templates/master_data/officers.html:42
-msgid "Actions"
-msgstr "Aksi"
-
-#: app/templates/master_data/coordinators.html:56
-#: app/templates/master_data/officers.html:58
 msgid "Active"
 msgstr "Aktif"
 
-#: app/templates/master_data/coordinators.html:56
-#: app/templates/master_data/officers.html:58
-msgid "Inactive"
-msgstr "Tidak Aktif"
+msgid "Daily Reports - Anomaly"
+msgstr "Laporan Harian - Anomali"
 
-#: app/templates/master_data/coordinators.html:63
-#: app/templates/master_data/officers.html:75
-msgid "Edit"
-msgstr "Ubah"
+msgid "Daily Reports"
+msgstr "Laporan Harian"
 
-#: app/templates/master_data/coordinators.html:66
-msgid "Delete"
-msgstr "Hapus"
+msgid "Daily Anomaly Reports"
+msgstr "Laporan Anomali Harian"
 
-#: app/templates/master_data/index.html:10
-msgid "Manage system master data"
-msgstr "Kelola data induk sistem"
+msgid "Type"
+msgstr "Tipe"
 
-#: app/templates/master_data/index.html:21
-msgid "Manage coordinators"
-msgstr "Kelola koordinator"
+msgid "Reported By"
+msgstr "Dilaporkan Oleh"
 
-#: app/templates/master_data/index.html:32
-#: app/templates/master_data/officers.html:3
-#: app/templates/master_data/officers.html:15
-#: app/templates/master_data/officers.html:20
-#: app/templates/master_data/officers.html:25
-msgid "Officers"
-msgstr "Petugas"
-
-#: app/templates/master_data/index.html:33
-msgid "Manage field officers"
-msgstr "Kelola petugas lapangan"
-
-#: app/templates/master_data/index.html:44
-#: app/templates/master_data/reset_umt.html:3
-#: app/templates/master_data/reset_umt.html:15
-#: app/templates/master_data/reset_umt.html:20
-msgid "Reset UMT"
-msgstr "Reset UMT"
-
-#: app/templates/master_data/index.html:45
-msgid "Reset UMT updates"
-msgstr "Reset pembaruan UMT"
-
-#: app/templates/master_data/officers.html:27
-msgid "Add Officer"
-msgstr "Tambah Petugas"
-
-#: app/templates/master_data/officers.html:38
-msgid "RBM Code"
-msgstr "Kode RBM"
-
-#: app/templates/master_data/officers.html:39
-msgid "Coordinator"
-msgstr "Koordinator"
-
-#: app/templates/master_data/officers.html:41
-msgid "IMEI"
-msgstr "IMEI"
-
-#: app/templates/master_data/officers.html:62
-msgid "Not Set"
-msgstr "Belum Diatur"
-
-#: app/templates/master_data/officers.html:66
-msgid "Toggle Active"
-msgstr "Ubah Status Aktif"
-
-#: app/templates/master_data/officers.html:70
-msgid "Are you sure you want to reset the IMEI?"
-msgstr "Apakah Anda yakin ingin mereset IMEI?"
-
-#: app/templates/master_data/officers.html:71
-msgid "Reset IMEI"
-msgstr "Reset IMEI"
-
-#: app/templates/master_data/reset_umt.html:24
-msgid "Reset UMT Updates"
-msgstr "Reset Pembaruan UMT"
-
-#: app/templates/master_data/reset_umt.html:25
-msgid "Perform UMT update reset operations"
-msgstr "Lakukan operasi reset pembaruan UMT"
-
-#: app/templates/master_data/reset_umt.html:31
-msgid "Reset Options"
-msgstr "Opsi Reset"
-
-#: app/templates/master_data/reset_umt.html:36
-msgid "Reset all UMT data"
-msgstr "Reset semua data UMT"
-
-#: app/templates/master_data/reset_umt.html:42
-msgid "Reset UMT configurations"
-msgstr "Reset konfigurasi UMT"
-
-#: app/templates/master_data/reset_umt.html:48
-msgid "Clear UMT logs"
-msgstr "Hapus log UMT"
-
-#: app/templates/master_data/reset_umt.html:59
-msgid ""
-"Resetting UMT updates will clear all temporary data and configurations. "
-"This action cannot be undone. Please confirm before proceeding."
-msgstr "Mereset pembaruan UMT akan menghapus semua data sementara dan konfigurasi. Tindakan ini tidak dapat dibatalkan. Mohon konfirmasi sebelum melanjutkan."
-
-#: app/templates/master_data/reset_umt.html:67
-msgid "Perform Reset"
-msgstr "Lakukan Reset"
-
-#: app/templates/master_data/reset_umt.html:73
-msgid "Reset History"
-msgstr "Riwayat Reset"
-
-#: app/templates/master_data/reset_umt.html:78
 msgid "Date"
 msgstr "Tanggal"
 
-#: app/templates/master_data/reset_umt.html:79
-msgid "User"
-msgstr "Pengguna"
+msgid "Resolve"
+msgstr "Selesaikan"
 
-#: app/templates/master_data/reset_umt.html:80
+msgid "Delete"
+msgstr "Hapus"
+
+msgid "No anomaly data available"
+msgstr "Tidak ada data anomali yang tersedia"
+
+msgid "There are no anomaly reports to display at this time."
+msgstr "Saat ini tidak ada laporan anomali untuk ditampilkan."
+
+msgid "Edit Anomaly - Anomaly"
+msgstr "Ubah Anomali - Anomali"
+
+msgid "Edit Anomaly"
+msgstr "Ubah Anomali"
+
+msgid "Edit Anomaly Report"
+msgstr "Ubah Laporan Anomali"
+
+msgid "Reported"
+msgstr "Dilaporkan"
+
+msgid "Investigating"
+msgstr "Dalam Penyelidikan"
+
+msgid "Resolved"
+msgstr "Terselesaikan"
+
+msgid "Update Report"
+msgstr "Perbarui Laporan"
+
+msgid "Edit Anomaly Master - Anomaly"
+msgstr "Ubah Master Anomali - Anomali"
+
+msgid "Master Data"
+msgstr "Data Induk"
+
+msgid "Edit Anomaly Master Data"
+msgstr "Ubah Data Induk Anomali"
+
+msgid "Update Master Data"
+msgstr "Perbarui Data Induk"
+
+msgid "HO Anomaly Module - PLN Application"
+msgstr "Modul Anomali HO - Aplikasi PLN"
+
+msgid "HO Anomaly Module"
+msgstr "Modul Anomali HO"
+
+msgid "Manage and monitor anomalies"
+msgstr "Kelola dan pantau anomali"
+
+msgid "Anomalies by officer"
+msgstr "Anomali berdasarkan petugas"
+
+msgid "Anomalies by date"
+msgstr "Anomali berdasarkan tanggal"
+
+msgid "Manage anomaly types"
+msgstr "Kelola jenis anomali"
+
+msgid "Master Data - Anomaly"
+msgstr "Data Induk - Anomali"
+
+msgid "Actions"
+msgstr "Aksi"
+
+msgid "Edit"
+msgstr "Ubah"
+
+msgid "No master data available"
+msgstr "Tidak ada data induk yang tersedia"
+
+msgid "There is no anomaly master data to display at this time."
+msgstr "Saat ini tidak ada data induk anomali untuk ditampilkan."
+
+msgid "Recap by Date - Anomaly"
+msgstr "Rekap per Tanggal - Anomali"
+
+msgid "Recap by Date"
+msgstr "Rekap per Tanggal"
+
+msgid "Anomaly Recap by Date"
+msgstr "Rekap Anomali per Tanggal"
+
+msgid "Start Date"
+msgstr "Tanggal Mulai"
+
+msgid "End Date"
+msgstr "Tanggal Selesai"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Anomalies by Date"
+msgstr "Anomali Berdasarkan Tanggal"
+
+msgid "Total Anomalies"
+msgstr "Total Anomali"
+
+msgid "Anomaly Trend Chart"
+msgstr "Grafik Tren Anomali"
+
+msgid "Anomaly trend chart by date"
+msgstr "Grafik tren anomali berdasarkan tanggal"
+
+msgid "There is no anomaly data to display at this time."
+msgstr "Saat ini tidak ada data anomali untuk ditampilkan."
+
+msgid "Recap by Officer - Anomaly"
+msgstr "Rekap per Petugas - Anomali"
+
+msgid "Recap by Officer"
+msgstr "Rekap per Petugas"
+
+msgid "Anomaly Recap by Officer"
+msgstr "Rekap Anomali per Petugas"
+
+msgid "Anomalies by Officer"
+msgstr "Anomali Berdasarkan Petugas"
+
+msgid "Officer"
+msgstr "Petugas"
+
+msgid "Anomaly Distribution Chart"
+msgstr "Grafik Distribusi Anomali"
+
+msgid "Anomaly distribution chart by officer"
+msgstr "Grafik distribusi anomali berdasarkan petugas"
+
+msgid "Change Password - PLN Application"
+msgstr "Ubah Kata Sandi - Aplikasi PLN"
+
+msgid "Change Password"
+msgstr "Ubah Kata Sandi"
+
+msgid "Current Password"
+msgstr "Kata Sandi Saat Ini"
+
+msgid "New Password"
+msgstr "Kata Sandi Baru"
+
+msgid "Confirm New Password"
+msgstr "Konfirmasi Kata Sandi Baru"
+
+msgid "PLN Application"
+msgstr "Aplikasi PLN"
+
+msgid "Login to your account"
+msgstr "Masuk ke akun Anda"
+
+msgid "Username"
+msgstr "Nama Pengguna"
+
+msgid "Password"
+msgstr "Kata Sandi"
+
+msgid "Captcha"
+msgstr "Captcha"
+
+msgid "Enter the answer"
+msgstr "Masukkan jawaban"
+
+msgid "Login"
+msgstr "Masuk"
+
+msgid "Navigation"
+msgstr "Navigasi"
+
+msgid "Dashboard"
+msgstr "Dasbor"
+
+msgid "Reports & Monitoring"
+msgstr "Laporan & Pemantauan"
+
+msgid "Talangan"
+msgstr "Talangan"
+
+msgid "Information"
+msgstr "Informasi"
+
+msgid "Settings"
+msgstr "Pengaturan"
+
+msgid "Logout"
+msgstr "Keluar"
+
+msgid "Home"
+msgstr "Beranda"
+
+msgid "Welcome to your PLN Application dashboard"
+msgstr "Selamat datang di dasbor Aplikasi PLN Anda"
+
+msgid "Total Transactions"
+msgstr "Total Transaksi"
+
+msgid "Completed"
+msgstr "Selesai"
+
+msgid "Pending"
+msgstr "Tertunda"
+
+msgid "Monthly Transaction Summary (Last 6 Months)"
+msgstr "Ringkasan Transaksi Bulanan (6 Bulan Terakhir)"
+
+msgid "Month-over-Month Trend"
+msgstr "Tren Bulan ke Bulan"
+
+msgid "Recent Transactions"
+msgstr "Transaksi Terkini"
+
+msgid "Refresh"
+msgstr "Segarkan"
+
+msgid "Periode"
+msgstr "Periode"
+
+msgid "Jumlah"
+msgstr "Jumlah"
+
+msgid "Petugas"
+msgstr "Petugas"
+
+msgid "Number of Transactions"
+msgstr "Jumlah Transaksi"
+
+msgid "Total Amount (Rp)"
+msgstr "Total Nominal (Rp)"
+
+msgid "403 Forbidden - PLN Application"
+msgstr "403 Terlarang - Aplikasi PLN"
+
+msgid "403 Error"
+msgstr "Kesalahan 403"
+
+msgid "403 - Forbidden"
+msgstr "403 - Terlarang"
+
+msgid "You don't have permission to access this resource"
+msgstr "Anda tidak memiliki izin untuk mengakses sumber daya ini"
+
+msgid "Go to Dashboard"
+msgstr "Ke Dasbor"
+
+msgid "404 Not Found - PLN Application"
+msgstr "404 Tidak Ditemukan - Aplikasi PLN"
+
+msgid "404 Error"
+msgstr "Kesalahan 404"
+
+msgid "404 - Page Not Found"
+msgstr "404 - Halaman Tidak Ditemukan"
+
+msgid "The page you are looking for doesn't exist"
+msgstr "Halaman yang Anda cari tidak ada"
+
+msgid "500 Internal Server Error - PLN Application"
+msgstr "500 Kesalahan Server Internal - Aplikasi PLN"
+
+msgid "500 Error"
+msgstr "Kesalahan 500"
+
+msgid "500 - Internal Server Error"
+msgstr "500 - Kesalahan Server Internal"
+
+msgid "Something went wrong on our end. Please try again later."
+msgstr "Terjadi kesalahan di pihak kami. Silakan coba lagi nanti."
+
+msgid "Customer Lookup"
+msgstr "Pencarian Pelanggan"
+
+msgid "Customer Information Lookup"
+msgstr "Pencarian Informasi Pelanggan"
+
+msgid "Search for customer details by ID Pelanggan"
+msgstr "Cari detail pelanggan berdasarkan ID Pelanggan"
+
+msgid "Enter ID Pelanggan"
+msgstr "Masukkan ID Pelanggan"
+
+msgid "Search"
+msgstr "Cari"
+
+msgid "Customer Information"
+msgstr "Informasi Pelanggan"
+
+msgid "Assigned Officer"
+msgstr "Petugas yang Ditugaskan"
+
+msgid "Transaction History"
+msgstr "Riwayat Transaksi"
+
+msgid "Tipe Pembayaran"
+msgstr "Tipe Pembayaran"
+
+msgid "Created At"
+msgstr "Dibuat Pada"
+
+msgid "No transactions found"
+msgstr "Tidak ada transaksi ditemukan"
+
+msgid "No transaction history available for this customer."
+msgstr "Tidak ada riwayat transaksi yang tersedia untuk pelanggan ini."
+
+msgid "Access customer and system information"
+msgstr "Akses informasi pelanggan dan sistem"
+
+msgid "Search for customer details"
+msgstr "Cari detail pelanggan"
+
+msgid "Add Coordinator"
+msgstr "Tambah Koordinator"
+
+msgid "Add New Coordinator"
+msgstr "Tambah Koordinator Baru"
+
+msgid "Select Area"
+msgstr "Pilih Area"
+
+msgid "Coordinators"
+msgstr "Koordinator"
+
+msgid "All Areas"
+msgstr "Semua Area"
+
+msgid "Area"
+msgstr "Area"
+
+msgid "Inactive"
+msgstr "Tidak Aktif"
+
+msgid "Are you sure you want to delete this coordinator?"
+msgstr "Apakah Anda yakin ingin menghapus koordinator ini?"
+
+msgid "No coordinators found"
+msgstr "Tidak ada koordinator ditemukan"
+
+msgid "There are no coordinators to display at this time."
+msgstr "Saat ini tidak ada koordinator untuk ditampilkan."
+
+msgid "Edit Coordinator"
+msgstr "Ubah Koordinator"
+
+msgid "New Password (Optional)"
+msgstr "Kata Sandi Baru (Opsional)"
+
+msgid "Leave blank to keep current password"
+msgstr "Biarkan kosong untuk mempertahankan kata sandi saat ini"
+
+msgid "Update Coordinator"
+msgstr "Perbarui Koordinator"
+
+msgid "Manage system master data"
+msgstr "Kelola data induk sistem"
+
+msgid "Manage coordinators"
+msgstr "Kelola koordinator"
+
+msgid "Officers"
+msgstr "Petugas"
+
+msgid "Manage field officers"
+msgstr "Kelola petugas lapangan"
+
+msgid "Reset UMT"
+msgstr "Reset UMT"
+
+msgid "Reset UMT updates"
+msgstr "Reset pembaruan UMT"
+
+msgid "Add Officer"
+msgstr "Tambah Petugas"
+
+msgid "RBM Code"
+msgstr "Kode RBM"
+
+msgid "Coordinator"
+msgstr "Koordinator"
+
+msgid "IMEI"
+msgstr "IMEI"
+
+msgid "Not Set"
+msgstr "Belum Diatur"
+
+msgid "Toggle Active"
+msgstr "Ubah Status Aktif"
+
+msgid "Are you sure you want to reset the IMEI?"
+msgstr "Apakah Anda yakin ingin mereset IMEI?"
+
+msgid "Reset IMEI"
+msgstr "Reset IMEI"
+
+msgid "Reset UMT Updates"
+msgstr "Reset Pembaruan UMT"
+
+msgid "Perform UMT update reset operations"
+msgstr "Lakukan operasi reset pembaruan UMT"
+
+msgid "Reset Options"
+msgstr "Opsi Reset"
+
+msgid "Reset User IMEI Data"
+msgstr "Reset Data IMEI Pengguna"
+
+msgid "Reset Transaction Data"
+msgstr "Reset Data Transaksi"
+
+msgid "Reset Talangan Data"
+msgstr "Reset Data Talangan"
+
+msgid ""
+"Resetting UMT updates will clear all selected data. This action cannot be "
+"undone. Please confirm before proceeding."
+msgstr ""
+"Mereset pembaruan UMT akan menghapus semua data yang dipilih. Tindakan ini "
+"tidak dapat dibatalkan. Mohon konfirmasi sebelum melanjutkan."
+
+msgid "Are you sure you want to proceed with the reset? This action cannot be undone."
+msgstr "Apakah Anda yakin ingin melanjutkan proses reset? Tindakan ini tidak dapat dibatalkan."
+
+msgid "Perform Reset"
+msgstr "Lakukan Reset"
+
+msgid "Reset History"
+msgstr "Riwayat Reset"
+
 msgid "Action"
 msgstr "Tindakan"
 
-#: app/templates/master_data/reset_umt.html:86
 msgid "No reset history available"
 msgstr "Tidak ada riwayat reset yang tersedia"
 
-#: app/templates/reports/index.html:10
-msgid "View and analyze system reports and monitoring data"
-msgstr "Lihat dan analisis laporan sistem dan data pemantauan"
+msgid "Rekap per Area - Reports"
+msgstr "Rekap per Area - Laporan"
 
-#: app/templates/reports/index.html:20
-msgid "Rekap per RBM"
-msgstr "Rekap per RBM"
-
-#: app/templates/reports/index.html:21
-msgid "Report by RBM code"
-msgstr "Laporan berdasarkan kode RBM"
-
-#: app/templates/reports/index.html:32
-msgid "Rekap per Coordinator"
-msgstr "Rekap per Koordinator"
-
-#: app/templates/reports/index.html:33
-msgid "Report by coordinator"
-msgstr "Laporan berdasarkan koordinator"
-
-#: app/templates/reports/index.html:44
-msgid "Rekap per Officer"
-msgstr "Rekap per Petugas"
-
-#: app/templates/reports/index.html:45
-msgid "Report by field officer"
-msgstr "Laporan berdasarkan petugas lapangan"
-
-#: app/templates/reports/index.html:56
 msgid "Rekap per Area"
 msgstr "Rekap per Area"
 
-#: app/templates/reports/index.html:57
+msgid "Excel"
+msgstr "Excel"
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "Transaction Count"
+msgstr "Jumlah Transaksi"
+
+msgid "Total Amount"
+msgstr "Total Nominal"
+
+msgid "No data available"
+msgstr "Tidak ada data yang tersedia"
+
+msgid "There are no area reports to display at this time."
+msgstr "Saat ini tidak ada laporan area untuk ditampilkan."
+
+msgid "Bluetooth Print - Reports"
+msgstr "Cetak Bluetooth - Laporan"
+
+msgid "Bluetooth Print"
+msgstr "Cetak Bluetooth"
+
+msgid "Bluetooth Print Logs"
+msgstr "Log Cetak Bluetooth"
+
+msgid "Transaction ID"
+msgstr "ID Transaksi"
+
+msgid "Printed By"
+msgstr "Dicetak Oleh"
+
+msgid "File Path"
+msgstr "Jalur File"
+
+msgid "Printed At"
+msgstr "Dicetak Pada"
+
+msgid "No print logs available"
+msgstr "Tidak ada log cetak yang tersedia"
+
+msgid "There are no bluetooth print logs to display at this time."
+msgstr "Saat ini tidak ada log cetak bluetooth untuk ditampilkan."
+
+msgid "Rekap per Coordinator - Reports"
+msgstr "Rekap per Koordinator - Laporan"
+
+msgid "Rekap per Coordinator"
+msgstr "Rekap per Koordinator"
+
+msgid "View and analyze system reports and monitoring data"
+msgstr "Lihat dan analisis laporan sistem dan data pemantauan"
+
+msgid "Rekap per RBM"
+msgstr "Rekap per RBM"
+
+msgid "Report by RBM code"
+msgstr "Laporan berdasarkan kode RBM"
+
+msgid "Report by coordinator"
+msgstr "Laporan berdasarkan koordinator"
+
+msgid "Rekap per Officer"
+msgstr "Rekap per Petugas"
+
+msgid "Report by field officer"
+msgstr "Laporan berdasarkan petugas lapangan"
+
 msgid "Report by area"
 msgstr "Laporan berdasarkan area"
 
-#: app/templates/reports/index.html:68
 msgid "Rekap Tunggakan"
 msgstr "Rekap Tunggakan"
 
-#: app/templates/reports/index.html:69
 msgid "Outstanding payments report"
 msgstr "Laporan pembayaran terutang"
 
-#: app/templates/reports/index.html:80
 msgid "WA Sending Monitoring"
 msgstr "Pemantauan Pengiriman WA"
 
-#: app/templates/reports/index.html:81
 msgid "WhatsApp communication logs"
 msgstr "Log komunikasi WhatsApp"
 
-#: app/templates/reports/index.html:92
 msgid "Log Monitoring"
 msgstr "Pemantauan Log"
 
-#: app/templates/reports/index.html:93
 msgid "System monitoring logs"
 msgstr "Log pemantauan sistem"
 
-#: app/templates/reports/index.html:104
 msgid "Daily Settlement Monitoring"
 msgstr "Pemantauan Penyelesaian Harian"
 
-#: app/templates/reports/index.html:105
 msgid "Daily settlement reports"
 msgstr "Laporan penyelesaian harian"
 
-#: app/templates/reports/index.html:116
 msgid "Bluetooth Print Monitoring"
 msgstr "Pemantauan Cetak Bluetooth"
 
-#: app/templates/reports/index.html:117
 msgid "Print log monitoring"
 msgstr "Pemantauan log cetak"
 
-#: app/templates/talangan/index.html:9
+msgid "Log Monitoring - Reports"
+msgstr "Pemantauan Log - Laporan"
+
+msgid "System Monitoring Logs"
+msgstr "Log Pemantauan Sistem"
+
+msgid "Module Name"
+msgstr "Nama Modul"
+
+msgid "Event Type"
+msgstr "Jenis Peristiwa"
+
+msgid "Details"
+msgstr "Detail"
+
+msgid "User"
+msgstr "Pengguna"
+
+msgid "No monitoring logs available"
+msgstr "Tidak ada log pemantauan yang tersedia"
+
+msgid "There are no monitoring logs to display at this time."
+msgstr "Saat ini tidak ada log pemantauan untuk ditampilkan."
+
+msgid "Rekap per Officer - Reports"
+msgstr "Rekap per Petugas - Laporan"
+
+msgid "Rekap per RBM - Reports"
+msgstr "Rekap per RBM - Laporan"
+
+msgid "Rekap Tunggakan - Reports"
+msgstr "Rekap Tunggakan - Laporan"
+
+msgid "Rekap Tunggakan (Outstanding Payments)"
+msgstr "Rekap Tunggakan (Pembayaran Terutang)"
+
+msgid "WA Monitoring - Reports"
+msgstr "Pemantauan WA - Laporan"
+
+msgid "WA Monitoring"
+msgstr "Pemantauan WA"
+
+msgid "WhatsApp Monitoring"
+msgstr "Pemantauan WhatsApp"
+
+msgid "Message"
+msgstr "Pesan"
+
+msgid "Sent At"
+msgstr "Terkirim Pada"
+
+msgid "Delivered At"
+msgstr "Tersampaikan Pada"
+
+msgid "Read At"
+msgstr "Dibaca Pada"
+
+msgid "No WhatsApp logs available"
+msgstr "Tidak ada log WhatsApp yang tersedia"
+
+msgid "There are no WhatsApp logs to display at this time."
+msgstr "Saat ini tidak ada log WhatsApp untuk ditampilkan."
+
+msgid "Add Talangan Transaction"
+msgstr "Tambah Transaksi Talangan"
+
+msgid "Add Transaction"
+msgstr "Tambah Transaksi"
+
+msgid "Select Officer"
+msgstr "Pilih Petugas"
+
+msgid "Approval - Talangan"
+msgstr "Persetujuan - Talangan"
+
+msgid "Approval"
+msgstr "Persetujuan"
+
+msgid "Talangan Approval"
+msgstr "Persetujuan Talangan"
+
+msgid "Approved"
+msgstr "Disetujui"
+
+msgid "Rejected"
+msgstr "Ditolak"
+
+msgid "Pending Approval"
+msgstr "Menunggu Persetujuan"
+
+msgid "No approval data available"
+msgstr "Tidak ada data persetujuan yang tersedia"
+
+msgid "There are no talangan approval requests to display at this time."
+msgstr "Saat ini tidak ada permintaan persetujuan talangan untuk ditampilkan."
+
+msgid "Balance - Talangan"
+msgstr "Saldo - Talangan"
+
+msgid "Balance"
+msgstr "Saldo"
+
+msgid "Talangan Balance"
+msgstr "Saldo Talangan"
+
+msgid "Total Balance"
+msgstr "Total Saldo"
+
+msgid "Balance by Officer"
+msgstr "Saldo per Petugas"
+
+msgid "No balance data available"
+msgstr "Tidak ada data saldo yang tersedia"
+
+msgid "There is no balance data to display at this time."
+msgstr "Saat ini tidak ada data saldo untuk ditampilkan."
+
+msgid "Daily Target - Talangan"
+msgstr "Target Harian - Talangan"
+
+msgid "Daily Target Monitoring"
+msgstr "Pemantauan Target Harian"
+
+msgid "Today's Target"
+msgstr "Target Hari Ini"
+
+msgid "Achieved"
+msgstr "Tercapai"
+
+msgid "Progress"
+msgstr "Progres"
+
+msgid "Remaining"
+msgstr "Sisa"
+
+msgid "Target vs Achievement"
+msgstr "Target vs Pencapaian"
+
+msgid "No chart data available"
+msgstr "Tidak ada data grafik yang tersedia"
+
+msgid "Daily Target by Officer"
+msgstr "Target Harian per Petugas"
+
+msgid "Target"
+msgstr "Target"
+
+msgid "No daily target data available"
+msgstr "Tidak ada data target harian yang tersedia"
+
+msgid "There is no daily target data to display at this time."
+msgstr "Saat ini tidak ada data target harian untuk ditampilkan."
+
+msgid "Detail Payments - Talangan"
+msgstr "Detail Pembayaran - Talangan"
+
+msgid "Cash Payments"
+msgstr "Pembayaran Tunai"
+
+msgid "Installment Payments"
+msgstr "Pembayaran Cicilan"
+
+msgid "Transfer Payments"
+msgstr "Pembayaran Transfer"
+
+msgid "Payment Details"
+msgstr "Detail Pembayaran"
+
+msgid "Payment Type"
+msgstr "Jenis Pembayaran"
+
+msgid "No payment details available"
+msgstr "Tidak ada detail pembayaran yang tersedia"
+
+msgid "There are no payment details to display at this time."
+msgstr "Saat ini tidak ada detail pembayaran untuk ditampilkan."
+
+msgid "Edit Talangan Transaction"
+msgstr "Ubah Transaksi Talangan"
+
+msgid "Edit Transaction"
+msgstr "Ubah Transaksi"
+
+msgid "Update Transaction"
+msgstr "Perbarui Transaksi"
+
 msgid "Talangan (Advance Fund)"
 msgstr "Talangan (Dana Talangan)"
 
-#: app/templates/talangan/index.html:10
 msgid "Manage advance fund operations"
 msgstr "Kelola operasi dana talangan"
 
-#: app/templates/talangan/index.html:20
 msgid "Balance Monitoring"
 msgstr "Pemantauan Saldo"
 
-#: app/templates/talangan/index.html:21
 msgid "Monitor talangan balance"
 msgstr "Pantau saldo talangan"
 
-#: app/templates/talangan/index.html:32
 msgid "Daily Target"
 msgstr "Target Harian"
 
-#: app/templates/talangan/index.html:33
 msgid "Monitor daily targets"
 msgstr "Pantau target harian"
 
-#: app/templates/talangan/index.html:44
 msgid "Daily Transaction Totals"
 msgstr "Total Transaksi Harian"
 
-#: app/templates/talangan/index.html:45
 msgid "View daily transactions"
 msgstr "Lihat transaksi harian"
 
-#: app/templates/talangan/index.html:56
 msgid "Detail Payments"
 msgstr "Detail Pembayaran"
 
-#: app/templates/talangan/index.html:57
 msgid "Cash/installment details"
 msgstr "Detail tunai/cicilan"
 
-#: app/templates/talangan/index.html:68
 msgid "Input Settlement"
 msgstr "Input Penyelesaian"
 
-#: app/templates/talangan/index.html:69
 msgid "Input settlement data"
 msgstr "Input data penyelesaian"
 
-#: app/templates/talangan/index.html:80
 msgid "Approval Process"
 msgstr "Proses Persetujuan"
 
-#: app/templates/talangan/index.html:81
 msgid "Manage approvals"
 msgstr "Kelola persetujuan"
+
+msgid "Input Settlement - Talangan"
+msgstr "Input Penyelesaian - Talangan"
+
+msgid "Settlement Date"
+msgstr "Tanggal Penyelesaian"
+
+msgid "Submit Settlement"
+msgstr "Kirim Penyelesaian"
+
+msgid "Recent Settlements"
+msgstr "Penyelesaian Terkini"
+
+msgid "No settlement data available"
+msgstr "Tidak ada data penyelesaian yang tersedia"
+
+msgid "There are no settlement records to display at this time."
+msgstr "Saat ini tidak ada catatan penyelesaian untuk ditampilkan."
+
+msgid "Talangan Transactions - Talangan"
+msgstr "Transaksi Talangan - Talangan"
+
+msgid "Talangan Transactions"
+msgstr "Transaksi Talangan"
+
+msgid "Are you sure you want to delete this transaction?"
+msgstr "Apakah Anda yakin ingin menghapus transaksi ini?"
+
+msgid "No talangan transactions available"
+msgstr "Tidak ada transaksi talangan yang tersedia"
+
+msgid "There are no talangan transactions to display at this time."
+msgstr "Saat ini tidak ada transaksi talangan untuk ditampilkan."
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Daily Settlement - Reports"
+msgstr "Penyelesaian Harian - Laporan"
+
+msgid "Daily Settlement"
+msgstr "Penyelesaian Harian"
+
+msgid "Daily Settlement Reports"
+msgstr "Laporan Penyelesaian Harian"
+
+msgid "Total Amount"
+msgstr "Total Nominal"
+
+msgid "Verified At"
+msgstr "Diverifikasi Pada"
+
+msgid "No daily settlements available"
+msgstr "Tidak ada penyelesaian harian yang tersedia"
+
+msgid "There are no daily settlement reports to display at this time."
+msgstr "Saat ini tidak ada laporan penyelesaian harian untuk ditampilkan."

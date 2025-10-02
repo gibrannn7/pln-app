@@ -91,12 +91,15 @@ def detail_payments():
     # For now, just render the page
     return render_template('talangan/detail_payments.html')
 
-@talangan_bp.route('/input-settlement')
+@talangan_bp.route('/input-settlement', methods=['GET', 'POST'])
 @login_required
 def input_settlement():
-    # This would handle input settlement
-    # For now, just render the page
-    return render_template('talangan/input_settlement.html')
+    if request.method == 'POST':
+        # Handle form submission
+        pass
+
+    officers = Officer.query.join(User, Officer.user_id == User.id).all()
+    return render_template('talangan/input_settlement.html', officers=officers)
 
 @talangan_bp.route('/approval')
 @login_required

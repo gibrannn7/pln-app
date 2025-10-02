@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_babel import Babel
 import pymysql
+from flask_session import Session
+from flask_session_captcha import FlaskSessionCaptcha
 
 # Initialize extensions
 db = SQLAlchemy()
@@ -14,6 +16,7 @@ LANGUAGES = ['en', 'id']
 
 # Setup Babel with a lazy loader for the locale
 babel = Babel()
+captcha = FlaskSessionCaptcha()
 
 def get_locale():
     """Get user's locale from session, defaulting to 'en'."""
@@ -28,7 +31,7 @@ def create_app():
     app = Flask(__name__)
     
     # Configuration
-    app.config['SECRET_KEY'] = 'psTBpygXXMQqYFtFusLXPFkntPgwACkqlEFjYSQJqQnHXPwApnVmakFNPdPGhCZQ'
+    app.config['SECRET_key'] = 'psTBpygXXMQqYFtFusLXPFkntPgwACkqlEFjYSQJqQnHXPwApnVmakFNPdPGhCZQ'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/pln_db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
@@ -39,6 +42,14 @@ def create_app():
     
     app.config['BABEL_DEFAULT_LOCALE'] = 'en'
     
+    # Captcha Configuration
+    app.config['CAPTCHA_ENABLE'] = True
+    app.config['CAPTCHA_LENGTH'] = 5
+    app.config['CAPTCHA_WIDTH'] = 160
+    app.config['CAPTCHA_HEIGHT'] = 60
+    app.config['SESSION_TYPE'] = 'filesystem'
+
+
     # Initialize extensions with app
     db.init_app(app)
     login_manager.init_app(app)
@@ -47,6 +58,8 @@ def create_app():
     
     # Pass the locale selector function during initialization
     babel.init_app(app, locale_selector=get_locale)
+    captcha.init_app(app)
+    Session(app)
 
     # Import User model
     from app.models import User

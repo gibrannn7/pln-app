@@ -9,3 +9,5 @@ pandas==2.1.1
 weasyprint==59.0
 Werkzeug==2.3.7
 Flask-Babel==3.0.1
+flask_session_captcha
+Flask-Session

@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from flask_login import login_required
+from flask_login import login_required, current_user
 from flask_babel import _
 from app.models import Anomaly, AnomalyMaster, User
 from app import db
+from datetime import datetime
 
 anomaly_bp = Blueprint('anomaly', __name__)
 

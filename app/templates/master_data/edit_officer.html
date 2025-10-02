@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Edit Officer') }} - {{ _('Master Data') }}{% endblock %}
+
+{% block content %}
+<div class="mb-6">
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">{{ _('Edit Officer') }}</h1>
+</div>
+
+<div class="max-w-2xl mx-auto">
+    <form method="POST" action="{{ url_for('master_data.edit_officer', id=officer.id) }}" class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6">
+        <div class="grid grid-cols-1 gap-6">
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ _('Username') }}</label>
+                <input type="text" id="username" name="username" value="{{ officer.user.username }}" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+            </div>
+            
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ _('New Password (Optional)') }}</label>
+                <input type="password" id="password" name="password" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white" placeholder="{{ _('Leave blank to keep current password') }}">
+            </div>
+            
+            <div>
+                <label for="area_code" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ _('Area') }}</label>
+                <select id="area_code" name="area_code" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                    <option value="">{{ _('Select Area') }}</option>
+                    {% for area in areas %}
+                    <option value="{{ area.code }}" {% if officer.user.area_code == area.code %}selected{% endif %}>{{ area.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label for="rbm_code" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ _('RBM Code') }}</label>
+                <input type="text" id="rbm_code" name="rbm_code" value="{{ officer.rbm_code }}" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+            </div>
+
+            <div>
+                <label for="coordinator_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ _('Coordinator') }}</label>
+                <select id="coordinator_id" name="coordinator_id" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                    <option value="">{{ _('Select Coordinator') }}</option>
+                    {% for coordinator in coordinators %}
+                    <option value="{{ coordinator.id }}" {% if officer.coordinator_id == coordinator.id %}selected{% endif %}>{{ coordinator.username }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="flex items-start">
+                <div class="flex items-center h-5">
+                    <input id="active" name="active" type="checkbox" {% if officer.active %}checked{% endif %} class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 dark:border-gray-600 rounded">
+                </div>
+                <div class="ml-3 text-sm">
+                    <label for="active" class="font-medium text-gray-700 dark:text-gray-300">{{ _('Active') }}</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-6 flex justify-end space-x-3">
+            <a href="{{ url_for('master_data.officers') }}" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                {{ _('Cancel') }}
+            </a>
+            <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
+                {{ _('Update Officer') }}
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
